@@ -63,6 +63,16 @@ body {
   color: var(--tatum-green);
 }
 
+.hero-kicker {
+  font-family: var(--font-orbitron), "Orbitron", sans-serif;
+  font-size: clamp(1.15rem, 3.2vw, 1.85rem);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tatum-green);
+  line-height: 1.25;
+}
+
 .heading-xl {
   font-family: var(--font-orbitron), "Orbitron", sans-serif;
   font-size: clamp(2.75rem, 8vw, 5.25rem);

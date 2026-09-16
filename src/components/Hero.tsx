@@ -6,12 +6,12 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[78svh] flex-col justify-end overflow-x-clip pb-6 pt-28 md:min-h-[72svh] md:pb-8 md:pt-32"
+      className="relative flex min-h-0 flex-col justify-start overflow-x-clip pb-6 pt-20 md:pb-8 md:pt-24"
     >
       <RecallBackdrop />
 
       <div className="section-pad relative z-10 mx-auto w-full max-w-[1200px]">
-        <div className="fade-up mb-6 flex flex-wrap items-center gap-3 text-sm">
+        <div className="fade-up mb-5 flex flex-wrap items-center gap-3 text-sm">
           <span className="rounded-full border border-[rgba(79,55,253,0.4)] bg-[rgba(79,55,253,0.12)] px-3 py-1 text-[var(--tatum-primary-400)]">
             {hackathon.dates.label}
           </span>
@@ -23,13 +23,15 @@ export function Hero() {
           </span>
         </div>
 
-        <div className="relative max-w-3xl">
+        <div className="relative max-w-4xl">
           <DigitalPlanet
             variant="purple"
             size="sm"
             className="absolute -right-4 top-0 hidden opacity-40 float-planet md:block"
           />
-          <p className="eyebrow fade-up mb-4">Tatum x Walrus · {hackathon.subtitle}</p>
+          <p className="hero-kicker fade-up mb-3">
+            Tatum x Walrus · {hackathon.subtitle}
+          </p>
           <h1 className="heading-xl title-split fade-up-delay mb-5 max-w-4xl">
             <span>Total </span>
             <span>Recall</span>
@@ -37,7 +39,7 @@ export function Hero() {
           <p className="fade-up-delay max-w-xl text-lg text-white/75 md:text-xl">
             {hackathon.tagline}
           </p>
-          <div className="fade-up-delay-2 mt-8 flex flex-wrap gap-3">
+          <div className="fade-up-delay-2 mt-7 flex flex-wrap gap-3">
             <a href={hackathon.applyUrl} className="btn-primary">
               Register interest
             </a>
