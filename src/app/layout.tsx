@@ -17,14 +17,21 @@ const orbitron = Orbitron({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://recall-tatum-walrus.vercel.app"),
   title: "Total Recall | Tatum x Walrus Memory Hackathon",
   description:
     "Get your memory back. Three tracks, $4,000 in prizes. Walrus Memory + Tatum. Web2 builders welcome.",
   openGraph: {
     title: "Total Recall | Tatum x Walrus Memory Hackathon",
     description:
-      "Build apps that learn over time. 13 Oct to 3 Nov 2026. 1st $500, 2nd $300, 3rd $200 per track.",
-    images: ["/assets/walrus/walrus-memory-social-preview.jpg"],
+      "Build apps that learn over time. 13 Oct to 3 Nov 2026. $4,000 prize pool. Walrus Memory + Tatum.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Total Recall | Tatum x Walrus Memory Hackathon",
+    description:
+      "Build apps that learn over time. 13 Oct to 3 Nov 2026. $4,000 prize pool.",
   },
 };
 
