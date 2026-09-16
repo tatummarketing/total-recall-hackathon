@@ -29,13 +29,11 @@ export function Hero() {
             size="sm"
             className="absolute -right-4 top-0 hidden opacity-40 float-planet md:block"
           />
-          <p className="hero-kicker fade-up mb-3">
-            Tatum x Walrus · {hackathon.subtitle}
-          </p>
-          <h1 className="heading-xl title-split fade-up-delay mb-5 max-w-4xl">
+          <h1 className="hero-title fade-up mb-2">Hackathon</h1>
+          <p className="heading-xl title-split fade-up-delay mb-5 max-w-4xl">
             <span>Total </span>
             <span>Recall</span>
-          </h1>
+          </p>
           <p className="fade-up-delay max-w-xl text-lg text-white/75 md:text-xl">
             {hackathon.tagline}
           </p>
