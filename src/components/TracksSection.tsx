@@ -42,7 +42,7 @@ export function TracksSection() {
         </div>
 
         <div className="card-recall overflow-hidden md:grid md:grid-cols-[0.85fr_1.15fr]">
-          <div className="border-b border-white/10 md:border-b-0 md:border-r">
+          <div className="flex flex-col border-b border-white/10 md:border-b-0 md:border-r">
             {tracks.map((t, i) => (
               <button
                 key={t.id}
@@ -68,6 +68,16 @@ export function TracksSection() {
                 </span>
               </button>
             ))}
+
+            <div className="mt-auto flex flex-1 flex-col justify-end border-t border-white/10 px-6 py-8 md:min-h-[200px]">
+              <p className="mb-1 text-[10px] font-semibold tracking-[0.2em] text-white/40 uppercase">
+                Per track
+              </p>
+              <p className="font-display text-5xl font-bold leading-none tracking-tight text-[var(--tatum-green)] md:text-6xl lg:text-7xl">
+                $1,000
+              </p>
+              <p className="mt-2 text-sm text-white/50">1st $500 · 2nd $300 · 3rd $200</p>
+            </div>
           </div>
 
           <div key={track.id} className="track-panel-enter relative min-h-[440px] p-8 lg:p-10">
