@@ -31,6 +31,12 @@ export const hackathon = {
     walrusDocs: "https://docs.wal.app/",
     previousHackathon: "https://tatum.io/tatum-x-walrus-hackathon",
   },
+  socials: {
+    tatumX: "https://x.com/tatum_io",
+    tatumLinkedIn: "https://www.linkedin.com/company/tatumio",
+    walrusX: "https://x.com/WalrusProtocol",
+    walrusLinkedIn: "https://www.linkedin.com/company/walrus-foundation",
+  },
   resources: [
     { label: "Tatum website", href: "https://tatum.io" },
     { label: "Docs", href: "https://docs.tatum.io/" },

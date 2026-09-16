@@ -31,6 +31,15 @@ const footerCols = [
       { label: "Last hackathon", href: hackathon.docs.previousHackathon },
     ],
   },
+  {
+    title: "Socials",
+    links: [
+      { label: "Tatum on X", href: hackathon.socials.tatumX },
+      { label: "Tatum on LinkedIn", href: hackathon.socials.tatumLinkedIn },
+      { label: "Walrus on X", href: hackathon.socials.walrusX },
+      { label: "Walrus on LinkedIn", href: hackathon.socials.walrusLinkedIn },
+    ],
+  },
 ];
 
 export function CtaFooter() {
@@ -93,8 +102,8 @@ export function CtaFooter() {
 
       <section id="resources" className="section-pad relative z-[1] border-t border-[rgba(79,55,253,0.2)] py-10 md:py-12">
         <div className="container-page">
-          <p className="eyebrow mb-6">Paths into Tatum</p>
-          <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
+          <p className="eyebrow mb-6">Paths into Tatum & Walrus</p>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {footerCols.map((col) => (
               <div key={col.title}>
                 <h3 className="mb-3 text-sm font-semibold text-white">{col.title}</h3>
@@ -125,7 +134,7 @@ export function CtaFooter() {
           </a>
 
           <p className="text-xs text-white/35">
-            {hackathon.name} · Tatum x Walrus · Partner draft
+            {hackathon.name} · Tatum x Walrus
           </p>
         </div>
       </footer>
