@@ -76,7 +76,6 @@ export function TracksSection() {
               <p className="font-display text-5xl font-bold leading-none tracking-tight text-[var(--tatum-green)] md:text-6xl lg:text-7xl">
                 $1,000
               </p>
-              <p className="mt-2 text-sm text-white/50">1st $500 · 2nd $300 · 3rd $200</p>
             </div>
           </div>
 
