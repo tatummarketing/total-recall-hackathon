@@ -29,9 +29,9 @@ export function TracksSection() {
                 key={t.id}
                 type="button"
                 onClick={() => setActive(i)}
-                className={`font-display h-11 w-11 rounded-xl border text-sm font-bold transition-all duration-300 ${
+                className={`h-11 w-11 rounded-lg border text-sm font-semibold transition-all duration-150 ${
                   active === i
-                    ? `${tabAccent[t.accent]} text-white scale-110`
+                    ? `${tabAccent[t.accent]} text-white`
                     : "border-white/10 bg-white/5 text-white/40 hover:border-white/25"
                 }`}
               >

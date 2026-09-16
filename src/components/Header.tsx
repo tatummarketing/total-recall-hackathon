@@ -9,6 +9,7 @@ const links = [
   { href: "#tracks", label: "Tracks" },
   { href: "#prizes", label: "Prizes" },
   { href: "#dates", label: "Dates" },
+  { href: "#resources", label: "Resources" },
   { href: "#faq", label: "FAQ" },
 ];
 
@@ -47,7 +48,7 @@ export function Header() {
           ))}
         </nav>
 
-        <a href={hackathon.applyUrl} className="btn-primary !px-4 !py-2 text-sm">
+        <a href={hackathon.applyUrl} className="btn-primary text-sm">
           Apply
         </a>
       </div>

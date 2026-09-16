@@ -19,13 +19,29 @@ export const hackathon = {
   prizePool: "$4,000",
   applyUrl: "#apply",
   discordUrl: "https://discord.gg/hR6NG7sNXE",
+  website: "https://tatum.io",
   docs: {
     tatumRpc: "https://docs.tatum.io/",
     aiBuilder: "https://ai.tatum.io/",
+    dashboard: "https://dashboard.tatum.io/",
+    getStarted: "https://docs.tatum.io/docs/getting-started",
+    rpc: "https://docs.tatum.io/reference",
+    pricing: "https://tatum.io/pricing",
     walrusMemory: "https://walrus.xyz/",
     walrusDocs: "https://docs.wal.app/",
     previousHackathon: "https://tatum.io/tatum-x-walrus-hackathon",
   },
+  resources: [
+    { label: "Tatum website", href: "https://tatum.io" },
+    { label: "Docs", href: "https://docs.tatum.io/" },
+    { label: "AI Builder", href: "https://ai.tatum.io/" },
+    { label: "Dashboard", href: "https://dashboard.tatum.io/" },
+    { label: "RPC & APIs", href: "https://docs.tatum.io/reference" },
+    { label: "Get started", href: "https://docs.tatum.io/docs/getting-started" },
+    { label: "Pricing", href: "https://tatum.io/pricing" },
+    { label: "Walrus Memory", href: "https://walrus.xyz/" },
+    { label: "Walrus docs", href: "https://docs.wal.app/" },
+  ],
 };
 
 export const missionCards = [
