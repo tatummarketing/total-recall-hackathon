@@ -27,8 +27,12 @@ export const hackathon = {
     getStarted: "https://docs.tatum.io/docs/getting-started",
     rpc: "https://docs.tatum.io/reference",
     pricing: "https://tatum.io/pricing",
-    walrusMemory: "https://walrus.xyz/",
+    walrusSite: "https://walrus.xyz/",
+    walrusMemory: "https://docs.wal.app/walrus-memory",
+    walrusMemoryClaude:
+      "https://blog.walrus.xyz/how-to-add-portable-memory-to-claude-code-and-codex-with-walrus-memory/",
     walrusDocs: "https://docs.wal.app/",
+    walrusDiscord: "https://discord.gg/walrusprotocol",
     previousHackathon: "https://tatum.io/tatum-x-walrus-hackathon",
   },
   socials: {
@@ -45,8 +49,10 @@ export const hackathon = {
     { label: "RPC & APIs", href: "https://docs.tatum.io/reference" },
     { label: "Get started", href: "https://docs.tatum.io/docs/getting-started" },
     { label: "Pricing", href: "https://tatum.io/pricing" },
-    { label: "Walrus Memory", href: "https://walrus.xyz/" },
+    { label: "Walrus Memory docs", href: "https://docs.wal.app/walrus-memory" },
+    { label: "Walrus Memory for Claude", href: "https://blog.walrus.xyz/how-to-add-portable-memory-to-claude-code-and-codex-with-walrus-memory/" },
     { label: "Walrus docs", href: "https://docs.wal.app/" },
+    { label: "Walrus Discord", href: "https://discord.gg/walrusprotocol" },
   ],
 };
 

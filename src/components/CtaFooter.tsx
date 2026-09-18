@@ -21,13 +21,15 @@ const footerCols = [
       { label: "Get started", href: hackathon.docs.getStarted },
       { label: "RPC & APIs", href: hackathon.docs.rpc },
       { label: "Walrus docs", href: hackathon.docs.walrusDocs },
+      { label: "Walrus Memory docs", href: hackathon.docs.walrusMemory },
+      { label: "Walrus Memory for Claude", href: hackathon.docs.walrusMemoryClaude },
     ],
   },
   {
     title: "Hackathon",
     links: [
-      { label: "Discord", href: hackathon.discordUrl },
-      { label: "Walrus Memory", href: hackathon.docs.walrusMemory },
+      { label: "Tatum Discord", href: hackathon.discordUrl },
+      { label: "Walrus Discord", href: hackathon.docs.walrusDiscord },
       { label: "Last hackathon", href: hackathon.docs.previousHackathon },
     ],
   },
