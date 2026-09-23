@@ -149,6 +149,27 @@ export async function submitHackathonForm(
     };
   }
 
+  const sheetWebhook = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
+  if (sheetWebhook) {
+    try {
+      const res = await fetch(sheetWebhook, {
+        method: "POST",
+        // text/plain avoids Apps Script dropping the body on redirect
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({
+          timestamp: new Date().toISOString(),
+          ...values,
+        }),
+        redirect: "follow",
+      });
+      if (!res.ok) {
+        console.error("googleSheetsWebhook status", res.status, await res.text());
+      }
+    } catch (error) {
+      console.error("googleSheetsWebhook", error);
+    }
+  }
+
   return {
     ok: true,
     message: "Submission received. We will follow up on Discord if needed.",
