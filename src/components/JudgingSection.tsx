@@ -31,8 +31,7 @@ export function JudgingSection() {
             <span className="mr-2 text-[var(--tatum-green)]" aria-hidden>
               ★
             </span>
-            <span className="font-semibold text-white">Bonus</span>
-            <span className="text-white/45"> — </span>
+            <span className="font-semibold text-white">Bonus</span>{" "}
             {judgingBonus}
           </p>
         </div>
