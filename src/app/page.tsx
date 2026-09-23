@@ -2,6 +2,7 @@ import { CtaBanner, SiteFooter } from "@/components/CtaFooter";
 import { FaqSection } from "@/components/FaqSection";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
+import { JudgingSection } from "@/components/JudgingSection";
 import { MissionSection } from "@/components/MissionSection";
 import { PrizesSection } from "@/components/PrizesSection";
 import { Requirements } from "@/components/Requirements";
@@ -22,6 +23,7 @@ export default function Home() {
           <TracksSection />
           <PrizesSection />
           <Requirements />
+          <JudgingSection />
           <TimelineSection />
           <FaqSection />
           <CtaBanner />

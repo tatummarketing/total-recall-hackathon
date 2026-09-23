@@ -202,6 +202,33 @@ export const timeline = [
   },
 ];
 
+export const judgingCriteria = [
+  {
+    title: "Walrus and Tatum Integration",
+    weight: "30%",
+    detail:
+      "Meaningful, creative use of Walrus Memory as well as building with Tatum RPCs or Data APIs.",
+  },
+  {
+    title: "Technical Quality",
+    weight: "30%",
+    detail: "Clean code and successful Tatum Sui RPC integration.",
+  },
+  {
+    title: "Creativity",
+    weight: "20%",
+    detail: "Original ideas and distinctive product direction.",
+  },
+  {
+    title: "Presentation",
+    weight: "20%",
+    detail: "Clear docs and a working demo.",
+  },
+];
+
+export const judgingBonus =
+  "Share on X/LinkedIn tagging @Tatum_io and @WalrusFoundation";
+
 export const faqs = [
   {
     q: "Who can join?",

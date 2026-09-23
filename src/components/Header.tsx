@@ -8,6 +8,7 @@ const links = [
   { href: "#mission", label: "Mission" },
   { href: "#tracks", label: "Tracks" },
   { href: "#prizes", label: "Prizes" },
+  { href: "#judging", label: "Judging" },
   { href: "#dates", label: "Dates" },
   { href: "#faq", label: "FAQ" },
 ];
