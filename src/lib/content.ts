@@ -11,7 +11,7 @@ export const hackathon = {
     buildStart: "13 Oct",
     buildEnd: "3 Nov",
     submit: "3 Nov, 17:00 UTC",
-    judging: "4 to 10 Nov",
+    judging: "4 to 12 Nov",
     winners: "13 Nov",
     note: "",
   },
@@ -191,7 +191,7 @@ export const timeline = [
     detail: "Repo, demo, and blog post due 17:00 UTC.",
   },
   {
-    date: "4 to 10 Nov",
+    date: "4 to 12 Nov",
     title: "Judging",
     detail: "Same criteria across AI Builder and indie builds.",
   },
