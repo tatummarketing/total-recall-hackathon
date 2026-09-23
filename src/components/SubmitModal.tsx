@@ -73,6 +73,8 @@ function Section({
 function SubmitModalForm({ onClose }: { onClose: () => void }) {
   const titleId = useId();
   const [state, action, pending] = useActionState(submitHackathonForm, initialState);
+  const values = state.values;
+  const formKey = state.attempt ?? 0;
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -89,6 +91,14 @@ function SubmitModalForm({ onClose }: { onClose: () => void }) {
       document.body.style.overflow = prev;
     };
   }, []);
+
+  useEffect(() => {
+    if (!state.message || state.ok) return;
+    const firstError = document.querySelector<HTMLElement>(
+      ".submit-modal [aria-invalid='true'], .form-banner-error",
+    );
+    firstError?.scrollIntoView({ behavior: "smooth", block: "center" });
+  }, [state.attempt, state.message, state.ok]);
 
   if (state.ok) {
     return (
@@ -162,7 +172,12 @@ function SubmitModalForm({ onClose }: { onClose: () => void }) {
           </button>
         </header>
 
-        <form action={action} className="submit-modal-body" noValidate>
+        <form
+          key={formKey}
+          action={action}
+          className="submit-modal-body"
+          noValidate
+        >
           <Section number="01" title="Contact" hint="How we reach you">
             <div className="form-grid">
               <label className="form-field">
@@ -175,6 +190,7 @@ function SubmitModalForm({ onClose }: { onClose: () => void }) {
                   className="form-input"
                   autoComplete="email"
                   required
+                  defaultValue={values?.email}
                   aria-invalid={Boolean(state.fieldErrors?.email)}
                 />
                 <FieldError errors={state.fieldErrors} name="email" />
@@ -188,6 +204,7 @@ function SubmitModalForm({ onClose }: { onClose: () => void }) {
                   className="form-input"
                   placeholder="username"
                   required
+                  defaultValue={values?.discordId}
                   aria-invalid={Boolean(state.fieldErrors?.discordId)}
                 />
                 <FieldError errors={state.fieldErrors} name="discordId" />
@@ -201,6 +218,7 @@ function SubmitModalForm({ onClose }: { onClose: () => void }) {
                   className="form-input"
                   placeholder="https://linkedin.com/in/…"
                   required
+                  defaultValue={values?.linkedinUrl}
                   aria-invalid={Boolean(state.fieldErrors?.linkedinUrl)}
                 />
                 <FieldError errors={state.fieldErrors} name="linkedinUrl" />
@@ -209,7 +227,12 @@ function SubmitModalForm({ onClose }: { onClose: () => void }) {
                 <span className="form-label">
                   Telegram ID <span className="form-opt">Optional</span>
                 </span>
-                <input name="telegramId" className="form-input" placeholder="@handle" />
+                <input
+                  name="telegramId"
+                  className="form-input"
+                  placeholder="@handle"
+                  defaultValue={values?.telegramId}
+                />
               </label>
             </div>
           </Section>
@@ -233,6 +256,7 @@ function SubmitModalForm({ onClose }: { onClose: () => void }) {
                   name="tatumAccountId"
                   className="form-input font-mono text-sm"
                   required
+                  defaultValue={values?.tatumAccountId}
                   aria-invalid={Boolean(state.fieldErrors?.tatumAccountId)}
                 />
                 <p className="form-help">
@@ -252,6 +276,7 @@ function SubmitModalForm({ onClose }: { onClose: () => void }) {
                   className="form-input font-mono text-sm"
                   placeholder="0x…"
                   required
+                  defaultValue={values?.suiAddress}
                   aria-invalid={Boolean(state.fieldErrors?.suiAddress)}
                 />
                 <FieldError errors={state.fieldErrors} name="suiAddress" />
@@ -265,6 +290,7 @@ function SubmitModalForm({ onClose }: { onClose: () => void }) {
                   className="form-input font-mono text-sm"
                   placeholder="0x3247e3da…"
                   required
+                  defaultValue={values?.accountId}
                   aria-invalid={Boolean(state.fieldErrors?.accountId)}
                 />
                 <p className="form-help">
@@ -285,6 +311,7 @@ function SubmitModalForm({ onClose }: { onClose: () => void }) {
                   className="form-input font-mono text-sm"
                   placeholder="Public key from Delegate keys"
                   required
+                  defaultValue={values?.memwalAgentId}
                   aria-invalid={Boolean(state.fieldErrors?.memwalAgentId)}
                 />
                 <FieldError errors={state.fieldErrors} name="memwalAgentId" />
@@ -304,6 +331,7 @@ function SubmitModalForm({ onClose }: { onClose: () => void }) {
                   rows={4}
                   placeholder="What it does, how it uses Tatum + Walrus Memory…"
                   required
+                  defaultValue={values?.description}
                   aria-invalid={Boolean(state.fieldErrors?.description)}
                 />
                 <FieldError errors={state.fieldErrors} name="description" />
@@ -318,6 +346,7 @@ function SubmitModalForm({ onClose }: { onClose: () => void }) {
                   className="form-input"
                   placeholder="YouTube or other link"
                   required
+                  defaultValue={values?.demoVideoUrl}
                   aria-invalid={Boolean(state.fieldErrors?.demoVideoUrl)}
                 />
                 <FieldError errors={state.fieldErrors} name="demoVideoUrl" />
@@ -332,6 +361,7 @@ function SubmitModalForm({ onClose }: { onClose: () => void }) {
                   className="form-input"
                   placeholder="https://github.com/…"
                   required
+                  defaultValue={values?.repoUrl}
                   aria-invalid={Boolean(state.fieldErrors?.repoUrl)}
                 />
                 <FieldError errors={state.fieldErrors} name="repoUrl" />
@@ -344,6 +374,7 @@ function SubmitModalForm({ onClose }: { onClose: () => void }) {
                   name="additionalDocs"
                   className="form-input"
                   placeholder="Docs, blog, deck URL…"
+                  defaultValue={values?.additionalDocs}
                 />
               </label>
             </div>
@@ -364,6 +395,7 @@ function SubmitModalForm({ onClose }: { onClose: () => void }) {
                   className="form-input form-textarea"
                   rows={4}
                   required
+                  defaultValue={values?.walrusExperience}
                   aria-invalid={Boolean(state.fieldErrors?.walrusExperience)}
                 />
                 <FieldError errors={state.fieldErrors} name="walrusExperience" />
@@ -378,6 +410,7 @@ function SubmitModalForm({ onClose }: { onClose: () => void }) {
                   className="form-input form-textarea"
                   rows={2}
                   placeholder="Optional, specific Memory pain point"
+                  defaultValue={values?.walrusFriction}
                 />
               </label>
               <label className="form-field form-field-span">
@@ -389,6 +422,7 @@ function SubmitModalForm({ onClose }: { onClose: () => void }) {
                   className="form-input form-textarea"
                   rows={2}
                   placeholder="X, LinkedIn, etc."
+                  defaultValue={values?.socialPosts}
                 />
               </label>
             </div>
