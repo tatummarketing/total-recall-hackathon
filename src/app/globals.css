@@ -1193,6 +1193,14 @@ body {
   animation: cardEnter 0.35s ease both;
 }
 
+.submit-modal.event-rules-modal {
+  width: min(880px, 100%);
+}
+
+.event-rules-body {
+  padding-bottom: 1.5rem;
+}
+
 .submit-modal.card-recall:hover {
   transform: none;
   border-color: rgba(79, 55, 253, 0.35);

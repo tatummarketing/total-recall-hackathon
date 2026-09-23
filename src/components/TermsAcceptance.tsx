@@ -1,4 +1,7 @@
+"use client";
+
 import { legalLinks } from "@/lib/content";
+import { useEventRules } from "@/components/EventRulesModal";
 
 type TermsAcceptanceProps = {
   defaultChecked?: boolean;
@@ -14,6 +17,8 @@ export function TermsAcceptance({
   invalid = false,
   error,
 }: TermsAcceptanceProps) {
+  const { openRules } = useEventRules();
+
   return (
     <div className="form-check-stack rounded-xl border border-white/10 bg-black/25 px-4 py-4">
       <label className="form-check">
@@ -28,9 +33,16 @@ export function TermsAcceptance({
         />
         <span>
           I am 18+ and agree to the{" "}
-          <a href="#terms" className="text-[var(--tatum-green)]">
+          <button
+            type="button"
+            className="inline bg-transparent p-0 text-[var(--tatum-green)] underline-offset-2 hover:underline"
+            onClick={(e) => {
+              e.preventDefault();
+              openRules();
+            }}
+          >
             Event Rules
-          </a>
+          </button>
           , the{" "}
           <a
             href={legalLinks.tatumTerms}
