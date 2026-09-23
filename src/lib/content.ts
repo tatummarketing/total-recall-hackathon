@@ -31,6 +31,7 @@ export const hackathon = {
     walrusMemory: "https://docs.wal.app/walrus-memory",
     walrusMemoryClaude:
       "https://blog.walrus.xyz/how-to-add-portable-memory-to-claude-code-and-codex-with-walrus-memory/",
+    walrusMemoryDashboard: "https://memory.walrus.xyz/dashboard",
     walrusDocs: "https://docs.wal.app/",
     walrusDiscord: "https://discord.gg/walrusprotocol",
     previousHackathon: "https://tatum.io/tatum-x-walrus-hackathon",

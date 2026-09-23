@@ -1,15 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { hackathon } from "@/lib/content";
 import { PartnerLockup } from "@/components/PartnerLockup";
+import { SubmitProjectButton } from "@/components/SubmitModal";
 
 const links = [
   { href: "#mission", label: "Mission" },
   { href: "#tracks", label: "Tracks" },
   { href: "#prizes", label: "Prizes" },
   { href: "#dates", label: "Dates" },
-  { href: "#resources", label: "Resources" },
   { href: "#faq", label: "FAQ" },
 ];
 
@@ -48,9 +47,7 @@ export function Header() {
           ))}
         </nav>
 
-        <a href={hackathon.applyUrl} className="btn-primary text-sm">
-          Apply
-        </a>
+        <SubmitProjectButton className="btn-primary text-sm" />
       </div>
     </header>
   );

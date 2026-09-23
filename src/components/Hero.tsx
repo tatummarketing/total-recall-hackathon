@@ -1,6 +1,9 @@
+"use client";
+
 import { hackathon } from "@/lib/content";
 import { RecallBackdrop } from "@/components/RecallBackdrop";
 import { DigitalPlanet } from "@/components/space/DigitalPlanet";
+import { SubmitProjectButton } from "@/components/SubmitModal";
 
 export function Hero() {
   return (
@@ -38,9 +41,7 @@ export function Hero() {
             {hackathon.tagline}
           </p>
           <div className="fade-up-delay-2 mt-7 flex flex-wrap gap-3">
-            <a href={hackathon.applyUrl} className="btn-primary">
-              Register interest
-            </a>
+            <SubmitProjectButton />
             <a href="#tracks" className="btn-ghost">
               Pick a track
             </a>
