@@ -16,6 +16,16 @@ import { hackathon } from "@/lib/content";
 const MEMORY_DASHBOARD = "https://memory.walrus.xyz/dashboard";
 const TATUM_DASHBOARD = "https://dashboard.tatum.io/";
 
+const HOW_HEARD_OPTIONS = [
+  "Walrus Socials",
+  "Tatum Socials",
+  "Ads",
+  "Hackathon Listings",
+  "Friends",
+  "Search",
+  "Others",
+] as const;
+
 type SubmitModalContextValue = {
   open: boolean;
   openModal: () => void;
@@ -233,6 +243,47 @@ function SubmitModalForm({ onClose }: { onClose: () => void }) {
                   placeholder="@handle"
                   defaultValue={values?.telegramId}
                 />
+              </label>
+              <label className="form-field">
+                <span className="form-label">
+                  How did you hear about this event? <span className="form-req">*</span>
+                </span>
+                <select
+                  name="howHeard"
+                  className="form-input"
+                  required
+                  defaultValue={values?.howHeard ?? ""}
+                  aria-invalid={Boolean(state.fieldErrors?.howHeard)}
+                >
+                  <option value="" disabled>
+                    Select one
+                  </option>
+                  {HOW_HEARD_OPTIONS.map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
+                <FieldError errors={state.fieldErrors} name="howHeard" />
+              </label>
+              <label className="form-field">
+                <span className="form-label">
+                  Is this your first Web3 project? <span className="form-req">*</span>
+                </span>
+                <select
+                  name="firstWeb3Project"
+                  className="form-input"
+                  required
+                  defaultValue={values?.firstWeb3Project ?? ""}
+                  aria-invalid={Boolean(state.fieldErrors?.firstWeb3Project)}
+                >
+                  <option value="" disabled>
+                    Select one
+                  </option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+                <FieldError errors={state.fieldErrors} name="firstWeb3Project" />
               </label>
             </div>
           </Section>

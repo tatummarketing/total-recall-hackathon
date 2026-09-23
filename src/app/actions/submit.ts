@@ -18,6 +18,8 @@ export type SubmissionValues = {
   walrusExperience: string;
   walrusFriction: string;
   socialPosts: string;
+  howHeard: string;
+  firstWeb3Project: string;
 };
 
 export type SubmitState = {
@@ -52,6 +54,8 @@ function readValues(formData: FormData): SubmissionValues {
     walrusExperience: str(formData, "walrusExperience"),
     walrusFriction: str(formData, "walrusFriction"),
     socialPosts: str(formData, "socialPosts"),
+    howHeard: str(formData, "howHeard"),
+    firstWeb3Project: str(formData, "firstWeb3Project"),
   };
 }
 
@@ -99,6 +103,24 @@ export async function submitHackathonForm(
   if (!values.repoUrl) fieldErrors.repoUrl = "Required";
   else if (!isUrl(values.repoUrl)) fieldErrors.repoUrl = "Enter a valid URL";
   if (!values.walrusExperience) fieldErrors.walrusExperience = "Required";
+  if (!values.howHeard) fieldErrors.howHeard = "Required";
+  else if (
+    ![
+      "Walrus Socials",
+      "Tatum Socials",
+      "Ads",
+      "Hackathon Listings",
+      "Friends",
+      "Search",
+      "Others",
+    ].includes(values.howHeard)
+  ) {
+    fieldErrors.howHeard = "Pick an option from the list";
+  }
+  if (!values.firstWeb3Project) fieldErrors.firstWeb3Project = "Required";
+  else if (!["Yes", "No"].includes(values.firstWeb3Project)) {
+    fieldErrors.firstWeb3Project = "Select Yes or No";
+  }
 
   if (Object.keys(fieldErrors).length > 0) {
     return {
@@ -118,6 +140,7 @@ export async function submitHackathonForm(
         tatum_account_id, sui_address, account_id, memwal_agent_id,
         description, demo_video_url, repo_url, additional_docs,
         walrus_experience, walrus_friction, social_posts,
+        how_heard, first_web3_project,
         display_name, project_title
       ) VALUES (
         ${values.email},
@@ -135,6 +158,8 @@ export async function submitHackathonForm(
         ${values.walrusExperience},
         ${values.walrusFriction || null},
         ${values.socialPosts || null},
+        ${values.howHeard},
+        ${values.firstWeb3Project},
         ${values.email},
         ${values.description.slice(0, 120)}
       )

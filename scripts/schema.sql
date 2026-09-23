@@ -32,5 +32,6 @@ CREATE TABLE IF NOT EXISTS submissions (
   uses_tatum BOOLEAN DEFAULT false,
   mainnet_confirmed BOOLEAN DEFAULT false,
   how_heard TEXT,
+  first_web3_project TEXT,
   anything_else TEXT
 );
