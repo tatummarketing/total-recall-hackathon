@@ -34,6 +34,16 @@ const footerCols = [
       { label: "Tatum Discord", href: hackathon.discordUrl },
       { label: "Walrus Discord", href: hackathon.docs.walrusDiscord },
       { label: "Last hackathon", href: hackathon.docs.previousHackathon },
+      { label: "Walrus Sessions", href: "https://thewalrussessions.wal.app/index.html" },
+      { label: "Event Rules", href: "#terms" },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      { label: "Tatum Terms of Use", href: "https://tatum.io/terms-of-use" },
+      { label: "Walrus General Terms", href: "https://docs.wal.app/docs/legal/walrus_general_tos" },
+      { label: "Walrus Privacy", href: "https://docs.wal.app/docs/legal/privacy" },
     ],
   },
   {
@@ -105,23 +115,27 @@ export function SiteFooter() {
       <section id="resources" className="section-pad relative z-[1] border-t border-[rgba(79,55,253,0.2)] py-10 md:py-12">
         <div className="container-page">
           <p className="eyebrow mb-6">Paths into Tatum & Walrus</p>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
             {footerCols.map((col) => (
               <div key={col.title}>
                 <h3 className="mb-3 text-sm font-semibold text-white">{col.title}</h3>
                 <ul className="space-y-2">
-                  {col.links.map((link) => (
-                    <li key={link.href}>
-                      <a
-                        href={link.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-sm text-white/55 no-underline transition-colors hover:text-[var(--tatum-green)]"
-                      >
-                        {link.label}
-                      </a>
-                    </li>
-                  ))}
+                  {col.links.map((link) => {
+                    const external = link.href.startsWith("http");
+                    return (
+                      <li key={`${col.title}-${link.href}-${link.label}`}>
+                        <a
+                          href={link.href}
+                          {...(external
+                            ? { target: "_blank", rel: "noreferrer" }
+                            : {})}
+                          className="text-sm text-white/55 no-underline transition-colors hover:text-[var(--tatum-green)]"
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             ))}
@@ -136,7 +150,10 @@ export function SiteFooter() {
           </a>
 
           <p className="text-xs text-white/35">
-            {hackathon.name} · Tatum x Walrus
+            {hackathon.name} · Tatum x Walrus ·{" "}
+            <a href="#terms" className="text-white/45 no-underline hover:text-[var(--tatum-green)]">
+              Event Rules
+            </a>
           </p>
         </div>
       </footer>

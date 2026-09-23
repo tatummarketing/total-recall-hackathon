@@ -11,6 +11,7 @@ const links = [
   { href: "#judging", label: "Judging" },
   { href: "#dates", label: "Dates" },
   { href: "#faq", label: "FAQ" },
+  { href: "#terms", label: "Terms" },
 ];
 
 export function Header() {

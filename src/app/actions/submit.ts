@@ -20,6 +20,7 @@ export type SubmissionValues = {
   socialPosts: string;
   howHeard: string;
   firstWeb3Project: string;
+  acceptTerms: boolean;
 };
 
 export type SubmitState = {
@@ -56,6 +57,7 @@ function readValues(formData: FormData): SubmissionValues {
     socialPosts: str(formData, "socialPosts"),
     howHeard: str(formData, "howHeard"),
     firstWeb3Project: str(formData, "firstWeb3Project"),
+    acceptTerms: formData.get("acceptTerms") === "yes",
   };
 }
 
@@ -121,6 +123,9 @@ export async function submitHackathonForm(
   else if (!["Yes", "No"].includes(values.firstWeb3Project)) {
     fieldErrors.firstWeb3Project = "Select Yes or No";
   }
+  if (!values.acceptTerms) {
+    fieldErrors.acceptTerms = "You must accept the Event Rules and terms to submit";
+  }
 
   if (Object.keys(fieldErrors).length > 0) {
     return {
@@ -140,7 +145,7 @@ export async function submitHackathonForm(
         tatum_account_id, sui_address, account_id, memwal_agent_id,
         description, demo_video_url, repo_url, additional_docs,
         walrus_experience, walrus_friction, social_posts,
-        how_heard, first_web3_project,
+        how_heard, first_web3_project, accepted_terms,
         display_name, project_title
       ) VALUES (
         ${values.email},
@@ -160,6 +165,7 @@ export async function submitHackathonForm(
         ${values.socialPosts || null},
         ${values.howHeard},
         ${values.firstWeb3Project},
+        ${true},
         ${values.email},
         ${values.description.slice(0, 120)}
       )

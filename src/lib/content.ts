@@ -255,3 +255,44 @@ export const faqs = [
     a: "Yes if the submitted work is new progress during the build window.",
   },
 ];
+
+/** Legal links referenced by Event Rules and submission acceptance */
+export const legalLinks = {
+  tatumTerms: "https://tatum.io/terms-of-use",
+  walrusTerms: "https://docs.wal.app/docs/legal/walrus_general_tos",
+  walrusPrivacy: "https://docs.wal.app/docs/legal/privacy",
+  walrusSessions: "https://thewalrussessions.wal.app/index.html",
+};
+
+export const eventRules = {
+  eyebrow: "Event rules",
+  title: "Terms for Total Recall.",
+  intro:
+    "Total Recall (the “Hackathon”) is organized jointly by Tatum Technology LLC (“Tatum”) and the Walrus Foundation (“Walrus”, and together with Tatum, the “Sponsors”). By registering, submitting, or otherwise participating, you agree to these Event Rules, the Tatum Terms of Use, and the Walrus General Terms of Service.",
+  sections: [
+    {
+      title: "Eligibility",
+      body: "You must be at least 18 years old (or the age of majority where you live). You must not be a resident of a sanctioned or restricted jurisdiction. Employees, contractors, and immediate family of the Sponsors involved in running the Hackathon may be ineligible for prizes at the Sponsors’ sole discretion. Teams and solo builders are welcome.",
+    },
+    {
+      title: "Submissions",
+      body: "Your Submission must be your original work (or work you are authorized to submit), completed or materially advanced during the build window, and must meet the published requirements (including Walrus Memory and Tatum usage where stated). You keep ownership of your IP, and you grant the Sponsors a worldwide, royalty-free license to review, demo, and publicly showcase your Submission for Hackathon and marketing purposes.",
+    },
+    {
+      title: "Judging",
+      body: "Submissions are scored against the published judging criteria by a panel appointed by the Sponsors. Panel decisions are final and binding. The Sponsors may disqualify Submissions that are incomplete, fraudulent, abusive, off-brief, or that violate these Event Rules or applicable law.",
+    },
+    {
+      title: "Prizes",
+      body: "Any prize amounts listed on this site are estimates and may be paid in USD, stablecoins, or other forms the Sponsors choose. Prizes are awarded only if and when the Sponsors confirm winners. Prize Recipients must respond and provide any required payment or wallet details within 14 days of an official winner announcement (as determined by the Sponsors). If a winner is unreachable, ineligible, or fails to claim, the prize may be forfeited and an alternate selected. You accept all risk of loss from incorrect wallet addresses or incompatible wallets. Taxes and reporting obligations are solely the winner’s responsibility. Prizes have no cash alternative except as the Sponsors allow, and are not transferable without written consent.",
+    },
+    {
+      title: "No guarantee; changes",
+      body: "Participation does not guarantee a prize, placement, publicity, or future opportunity. The Sponsors may modify, suspend, or cancel the Hackathon, prize pool, timeline, or rules for any reason, including technical, legal, or operational issues, without liability. This Hackathon is a skill-based event, not a lottery or game of chance.",
+    },
+    {
+      title: "Liability",
+      body: "To the maximum extent permitted by law, the Sponsors and their affiliates are not liable for any indirect, incidental, special, consequential, or punitive damages arising from the Hackathon or your Submission. Platforms and third-party services (including Discord, GitHub, and blockchain networks) are used at your own risk.",
+    },
+  ],
+};

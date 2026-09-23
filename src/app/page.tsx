@@ -7,6 +7,7 @@ import { MissionSection } from "@/components/MissionSection";
 import { PrizesSection } from "@/components/PrizesSection";
 import { Requirements } from "@/components/Requirements";
 import { SubmitModalProvider } from "@/components/SubmitModal";
+import { TermsSection } from "@/components/TermsSection";
 import { TimelineSection } from "@/components/TimelineSection";
 import { TracksSection } from "@/components/TracksSection";
 import { PageSpaceMood } from "@/components/space/PageSpaceMood";
@@ -26,6 +27,7 @@ export default function Home() {
           <JudgingSection />
           <TimelineSection />
           <FaqSection />
+          <TermsSection />
           <CtaBanner />
           <SiteFooter />
         </main>

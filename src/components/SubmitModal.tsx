@@ -12,6 +12,7 @@ import {
 import { useActionState } from "react";
 import { submitHackathonForm, type SubmitState } from "@/app/actions/submit";
 import { hackathon } from "@/lib/content";
+import { TermsAcceptance } from "@/components/TermsAcceptance";
 
 const MEMORY_DASHBOARD = "https://memory.walrus.xyz/dashboard";
 const TATUM_DASHBOARD = "https://dashboard.tatum.io/";
@@ -480,6 +481,12 @@ function SubmitModalForm({ onClose }: { onClose: () => void }) {
           </Section>
 
           <div className="form-footer">
+            <TermsAcceptance
+              defaultChecked={Boolean(values?.acceptTerms)}
+              invalid={Boolean(state.fieldErrors?.acceptTerms)}
+              error={state.fieldErrors?.acceptTerms}
+            />
+
             {state.message && !state.ok ? (
               <p className="form-banner-error" role="alert">
                 {state.message}
