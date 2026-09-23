@@ -12,7 +12,7 @@ export const hackathon = {
     buildEnd: "3 Nov",
     submit: "3 Nov, 17:00 UTC",
     judging: "4 to 10 Nov",
-    winners: "11 Nov",
+    winners: "13 Nov",
     note: "",
   },
   location: "Online globally",
@@ -196,7 +196,7 @@ export const timeline = [
     detail: "Same criteria across AI Builder and indie builds.",
   },
   {
-    date: "11 Nov",
+    date: "13 Nov",
     title: "Winners announced",
     detail: "Results shared publicly with partners and community.",
   },
