@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
-export const alt = "Total Recall — Tatum x Walrus Memory Hackathon · $4,000 prize pool";
+export const alt = "Total Recall · Tatum x Walrus Memory Hackathon · $4,000 prize pool";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -261,7 +261,7 @@ export default async function Image() {
                   color: "rgba(255,255,255,0.55)",
                 }}
               >
-                13 Oct – 3 Nov 2026 · Online
+                13 Oct to 3 Nov 2026 · Online
               </div>
             </div>
           </div>

@@ -455,17 +455,21 @@ function SubmitModalForm({ onClose }: { onClose: () => void }) {
               <label className="form-field form-field-span">
                 <span className="form-label">
                   How was your experience building with the Tatum AI Builder?{" "}
-                  <span className="form-opt">Optional</span>
+                  <span className="form-req">*</span>
                 </span>
                 <p className="form-help mb-1">
-                  Prompting, generated app quality, dashboard, or skip if you did not use AI Builder.
+                  Prompting, generated app quality, dashboard, and what could be improved. If you did
+                  not use AI Builder, say so briefly.
                 </p>
                 <textarea
                   name="tatumAiBuilderExperience"
                   className="form-input form-textarea"
                   rows={3}
+                  required
                   defaultValue={values?.tatumAiBuilderExperience}
+                  aria-invalid={Boolean(state.fieldErrors?.tatumAiBuilderExperience)}
                 />
+                <FieldError errors={state.fieldErrors} name="tatumAiBuilderExperience" />
               </label>
               <label className="form-field form-field-span">
                 <span className="form-label">

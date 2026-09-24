@@ -69,7 +69,7 @@ export const missionCards = [
     id: "builder",
     label: "Fast start",
     title: "Tatum AI Builder",
-    body: "Ship from a prompt at ai.tatum.io. Generate the app, wire Walrus Memory, and use Tatum RPCs for onchain data — then iterate in the dashboard.",
+    body: "Ship from a prompt at ai.tatum.io. Generate the app, wire Walrus Memory, and use Tatum RPCs for onchain data, then iterate in the dashboard.",
     accent: "primary",
   },
   {
@@ -145,11 +145,11 @@ export const tracks: Track[] = [
     blurb:
       "Money products people actually open. Shared budgets, spend tracking, savings goals, and payment flows that feel normal. Blockchain stays invisible. Walrus Memory makes balances, habits, and preferences stick across sessions.",
     bestFit:
-      "Fintech and product builders shipping everyday money tools — budgets, splits, and spend that learn with the user.",
+      "Fintech and product builders shipping everyday money tools: budgets, splits, and spend that learn with the user.",
     ideas: [
       "Group spending that remembers who owes what",
       "Subscription managers with learned spend limits",
-      "Savings goals that adapt to real cash-flow patterns",
+      "Savings goals that adapt to real cash flow patterns",
     ],
     accent: "navy",
     walrusIndex: 4,
@@ -162,7 +162,7 @@ export const requirements = [
   "At least 10 memories stored on Mainnet",
   "Published blog post: what it does, how it uses Tatum + Walrus, how it learned over time",
   "Working demo and public repo",
-  "Optional: build with Tatum AI Builder (ai.tatum.io) for the dedicated $500 bonus",
+  "Optional build with Tatum AI Builder (ai.tatum.io) for the dedicated $500 bonus",
 ];
 
 export const bonusPrizes = [
@@ -284,11 +284,11 @@ export const eventRules = {
     },
     {
       title: "Submissions",
-      body: "Your Submission must be your original work (or work you are authorized to submit), completed or materially advanced during the build window, and must meet the published requirements (including Walrus Memory and Tatum usage where stated). You keep ownership of your IP, and you grant the Sponsors a worldwide, royalty-free license to review, demo, and publicly showcase your Submission for Hackathon and marketing purposes.",
+      body: "Your Submission must be your original work (or work you are authorized to submit), completed or materially advanced during the build window, and must meet the published requirements (including Walrus Memory and Tatum usage where stated). You keep ownership of your IP, and you grant the Sponsors a worldwide, royalty free license to review, demo, and publicly showcase your Submission for Hackathon and marketing purposes.",
     },
     {
       title: "Judging",
-      body: "Submissions are scored against the published judging criteria by a panel appointed by the Sponsors. Panel decisions are final and binding. The Sponsors may disqualify Submissions that are incomplete, fraudulent, abusive, off-brief, or that violate these Event Rules or applicable law.",
+      body: "Submissions are scored against the published judging criteria by a panel appointed by the Sponsors. Panel decisions are final and binding. The Sponsors may disqualify Submissions that are incomplete, fraudulent, abusive, off brief, or that violate these Event Rules or applicable law.",
     },
     {
       title: "Prizes",
@@ -296,11 +296,11 @@ export const eventRules = {
     },
     {
       title: "No guarantee; changes",
-      body: "Participation does not guarantee a prize, placement, publicity, or future opportunity. The Sponsors may modify, suspend, or cancel the Hackathon, prize pool, timeline, or rules for any reason, including technical, legal, or operational issues, without liability. This Hackathon is a skill-based event, not a lottery or game of chance.",
+      body: "Participation does not guarantee a prize, placement, publicity, or future opportunity. The Sponsors may modify, suspend, or cancel the Hackathon, prize pool, timeline, or rules for any reason, including technical, legal, or operational issues, without liability. This Hackathon is a skill based event, not a lottery or game of chance.",
     },
     {
       title: "Liability",
-      body: "To the maximum extent permitted by law, the Sponsors and their affiliates are not liable for any indirect, incidental, special, consequential, or punitive damages arising from the Hackathon or your Submission. Platforms and third-party services (including Discord, GitHub, and blockchain networks) are used at your own risk.",
+      body: "To the maximum extent permitted by law, the Sponsors and their affiliates are not liable for any indirect, incidental, special, consequential, or punitive damages arising from the Hackathon or your Submission. Platforms and third party services (including Discord, GitHub, and blockchain networks) are used at your own risk.",
     },
   ],
 };

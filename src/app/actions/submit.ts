@@ -107,6 +107,9 @@ export async function submitHackathonForm(
   if (!values.repoUrl) fieldErrors.repoUrl = "Required";
   else if (!isUrl(values.repoUrl)) fieldErrors.repoUrl = "Enter a valid URL";
   if (!values.walrusExperience) fieldErrors.walrusExperience = "Required";
+  if (!values.tatumAiBuilderExperience) {
+    fieldErrors.tatumAiBuilderExperience = "Required";
+  }
   if (!values.howHeard) fieldErrors.howHeard = "Required";
   else if (
     ![
