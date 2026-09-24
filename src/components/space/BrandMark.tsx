@@ -4,7 +4,7 @@ type BrandMarkProps = {
 };
 
 const brandAssets = {
-  walrus: "/assets/walrus-drive/02_Walrus_Monogram/SVG/Walrus_Monogram_White.svg",
+  walrus: "/assets/walrus/walrus-monogram-white.svg",
   tatum: "/assets/tatum/tatum-mark-white.svg",
 };
 

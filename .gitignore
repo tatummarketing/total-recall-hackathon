@@ -40,3 +40,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 scripts/submissions-export.csv
+
+# Brand-kit dumps are too large for Webflow Cloud (100 MiB build cap)
+/public/assets/walrus-drive/
+/public/assets/tatum-drive/
+/public/assets/reference/

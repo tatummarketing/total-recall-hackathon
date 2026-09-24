@@ -13,7 +13,7 @@ export function PartnerLockup({ size = "md", className = "" }: PartnerLockupProp
     <div className={`flex items-center ${size === "sm" ? "gap-3" : "gap-4"} ${className}`}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/assets/walrus-drive/01_Walrus_Logotype/SVG/Walrus_Logotype_White.svg"
+        src="/assets/walrus/walrus-logotype-white.svg"
         alt="Walrus"
         height={walrusH}
         className="w-auto"
