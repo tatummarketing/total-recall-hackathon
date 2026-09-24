@@ -269,6 +269,19 @@ function SubmitModalForm({ onClose }: { onClose: () => void }) {
               </label>
               <label className="form-field">
                 <span className="form-label">
+                  Which community or account did you hear about us through?{" "}
+                  <span className="form-opt">Optional</span>
+                </span>
+                <input
+                  name="heardFromSource"
+                  className="form-input"
+                  placeholder="Discord server, X account, newsletter…"
+                  maxLength={200}
+                  defaultValue={values?.heardFromSource}
+                />
+              </label>
+              <label className="form-field">
+                <span className="form-label">
                   Is this your first Web3 project? <span className="form-req">*</span>
                 </span>
                 <select

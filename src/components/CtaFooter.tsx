@@ -80,13 +80,8 @@ export function CtaBanner() {
             <a href={hackathon.discordUrl} target="_blank" rel="noreferrer" className="btn-ghost">
               Join Discord
             </a>
-            <a
-              href={hackathon.docs.aiBuilder}
-              target="_blank"
-              rel="noreferrer"
-              className="btn-accent"
-            >
-              AI Builder
+            <a href="#start-tatum" className="btn-accent">
+              How to start
             </a>
           </div>
         </div>
@@ -113,7 +108,7 @@ export function CtaBanner() {
 export function SiteFooter() {
   return (
     <>
-      <section id="resources" className="section-pad relative z-[1] border-t border-[rgba(79,55,253,0.2)] py-10 md:py-12">
+      <section id="links" className="section-pad relative z-[1] border-t border-[rgba(79,55,253,0.2)] py-10 md:py-12">
         <div className="container-page">
           <p className="eyebrow mb-6">Paths into Tatum & Walrus</p>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">

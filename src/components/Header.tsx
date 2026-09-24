@@ -10,6 +10,7 @@ const links = [
   { href: "#prizes", label: "Prizes" },
   { href: "#judging", label: "Judging" },
   { href: "#dates", label: "Dates" },
+  { href: "#start-tatum", label: "Start" },
   { href: "#faq", label: "FAQ" },
 ];
 

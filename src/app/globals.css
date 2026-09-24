@@ -29,7 +29,10 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
 
 body {
   margin: 0;
@@ -181,6 +184,127 @@ body {
 .btn-accent:hover {
   background: #28bb8d;
   box-shadow: 0 0 0 4px rgba(44, 205, 154, 0.2);
+}
+
+/* Tatum AI Builder prompt composer (mirrors ai.tatum.io hero composer) */
+.prompt-composer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem 1rem 0.875rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(126, 115, 253, 0.35);
+  background: rgba(11, 12, 32, 0.78);
+  backdrop-filter: blur(12px);
+  box-shadow:
+    0 0 0 1px rgba(44, 205, 154, 0.04),
+    0 20px 60px -24px rgba(79, 55, 253, 0.55);
+  transition:
+    border-color var(--tatum-duration-fast) var(--tatum-ease-default),
+    box-shadow var(--tatum-duration-fast) var(--tatum-ease-default);
+}
+
+.prompt-composer:focus-within {
+  border-color: var(--tatum-primary-400);
+  box-shadow:
+    0 0 0 4px rgba(79, 55, 253, 0.18),
+    0 20px 60px -24px rgba(79, 55, 253, 0.65);
+}
+
+.prompt-composer-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  font-size: 0.8125rem;
+}
+
+.prompt-composer-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(44, 205, 154, 0.12);
+  border: 1px solid rgba(44, 205, 154, 0.35);
+  color: var(--tatum-green);
+  font-weight: 600;
+}
+
+.prompt-composer-input {
+  display: block;
+  width: 100%;
+  min-height: 3.25rem;
+  max-height: 12rem;
+  resize: none;
+  field-sizing: content;
+  background: transparent;
+  border: 0;
+  outline: none;
+  color: white;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.prompt-composer-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.prompt-composer-foot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.prompt-chip {
+  padding: 0.3125rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  cursor: pointer;
+  transition:
+    border-color var(--tatum-duration-fast) var(--tatum-ease-default),
+    color var(--tatum-duration-fast) var(--tatum-ease-default),
+    background var(--tatum-duration-fast) var(--tatum-ease-default);
+}
+
+.prompt-chip:hover {
+  border-color: rgba(44, 205, 154, 0.5);
+  background: rgba(44, 205, 154, 0.08);
+  color: white;
+}
+
+.prompt-submit {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--tatum-radius-md);
+  border: 0;
+  background: var(--tatum-primary-500);
+  color: white;
+  cursor: pointer;
+  transition:
+    background var(--tatum-duration-fast) var(--tatum-ease-default),
+    transform var(--tatum-duration-fast) var(--tatum-ease-default),
+    opacity var(--tatum-duration-fast) var(--tatum-ease-default);
+}
+
+.prompt-submit:hover {
+  background: var(--tatum-primary-600);
+  transform: scale(1.05);
+}
+
+.prompt-submit[aria-disabled="true"] {
+  opacity: 0.45;
+  transform: none;
 }
 
 /* Total Recall backdrop: navy sky, purple terrain, green digital planets */
@@ -836,6 +960,7 @@ body {
 
 .prize-tile { animation: floatTile 5s ease-in-out infinite; }
 .prize-tile:nth-child(2) { animation-delay: 0.8s; }
+.prize-tile:nth-child(3) { animation-delay: 1.6s; }
 
 .float-mascot { animation: floaty 5.5s ease-in-out infinite; }
 

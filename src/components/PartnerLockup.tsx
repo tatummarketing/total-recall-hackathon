@@ -5,11 +5,12 @@ type PartnerLockupProps = {
 
 /** Crisp SVG lockup — native img so Next does not soft-rasterize the marks */
 export function PartnerLockup({ size = "md", className = "" }: PartnerLockupProps) {
+  // Walrus SVG canvas is taller than Tatum's; these heights give matching visual weight (per OG art)
   const walrusH = size === "sm" ? 20 : 24;
-  const tatumH = size === "sm" ? 16 : 18;
+  const tatumH = size === "sm" ? 17 : 21;
 
   return (
-    <div className={`flex items-center gap-2.5 ${className}`}>
+    <div className={`flex items-center ${size === "sm" ? "gap-3" : "gap-4"} ${className}`}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/assets/walrus-drive/01_Walrus_Logotype/SVG/Walrus_Logotype_White.svg"

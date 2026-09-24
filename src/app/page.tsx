@@ -7,6 +7,7 @@ import { JudgingSection } from "@/components/JudgingSection";
 import { MissionSection } from "@/components/MissionSection";
 import { PrizesSection } from "@/components/PrizesSection";
 import { Requirements } from "@/components/Requirements";
+import { TatumStartSection, WalrusStartSection } from "@/components/StartSections";
 import { SubmitModalProvider } from "@/components/SubmitModal";
 import { TimelineSection } from "@/components/TimelineSection";
 import { TracksSection } from "@/components/TracksSection";
@@ -27,6 +28,8 @@ export default function Home() {
             <Requirements />
             <JudgingSection />
             <TimelineSection />
+            <TatumStartSection />
+            <WalrusStartSection />
             <FaqSection />
             <CtaBanner />
             <SiteFooter />

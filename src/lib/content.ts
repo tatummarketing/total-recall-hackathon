@@ -6,17 +6,17 @@ export const hackathon = {
   summary:
     "Three weeks. Three tracks. Ship something that remembers you. Walrus Memory stores the learning. Tatum AI Builder and RPCs power the build. No crypto degree required.",
   dates: {
-    label: "13 Oct to 3 Nov 2026",
-    kickoff: "13 Oct",
-    buildStart: "13 Oct",
-    buildEnd: "3 Nov",
-    submit: "3 Nov, 17:00 UTC",
-    judging: "4 to 12 Nov",
-    winners: "13 Nov",
+    label: "20 Oct to 10 Nov 2026",
+    kickoff: "20 Oct",
+    buildStart: "20 Oct",
+    buildEnd: "10 Nov",
+    submit: "10 Nov, 17:00 UTC",
+    judging: "11 to 16 Nov",
+    winners: "17 Nov",
     note: "",
   },
   location: "Online globally",
-  prizePool: "$4,000",
+  prizePool: "$4,500",
   applyUrl: "#apply",
   discordUrl: "https://discord.gg/hR6NG7sNXE",
   website: "https://tatum.io",
@@ -57,6 +57,71 @@ export const hackathon = {
   ],
 };
 
+export const aiBuilderPrompt = {
+  builderUrl: "https://appbuilder.prototype.tatum.dev/",
+  ref: "total-recall",
+  placeholder: "Build an app that remembers its users with Walrus Memory…",
+  examples: [
+    {
+      label: "Sports picks journal",
+      prompt:
+        "Build a sports prediction app where users log picks before each match. Use Walrus Memory to remember every pick and keep a credibility score for each analyst, so the app learns who to trust over time.",
+    },
+    {
+      label: "Expense watchdog agent",
+      prompt:
+        "Build an expense watchdog agent that reviews my spending each week. Use Walrus Memory to remember my budgets, recurring bills, and past alerts so it picks up where it left off every session.",
+    },
+    {
+      label: "Shared budget app",
+      prompt:
+        "Build a shared budget app for friends and roommates that tracks who owes what. Use Walrus Memory to remember balances, split rules, and spending habits across sessions, with Tatum RPCs for onchain payments.",
+    },
+  ],
+};
+
+export const tatumStartLinks = [
+  {
+    id: "apikey",
+    label: "01",
+    title: "Get your API key",
+    body: "Create a free Tatum account. You need the dashboard account ID on the submission form.",
+    href: "https://dashboard.tatum.io/",
+    cta: "Sign up for an API key",
+    accent: "green" as const,
+  },
+  {
+    id: "docs",
+    label: "02",
+    title: "Read the docs",
+    body: "RPC, Data APIs, and getting started. Use these when your app reads onchain data.",
+    href: "https://docs.tatum.io/docs/getting-started",
+    cta: "Open Tatum docs",
+    accent: "primary" as const,
+  },
+];
+
+export const walrusStartLinks = [
+  {
+    id: "memory-dash",
+    label: "01",
+    title: "Open the Memory dashboard",
+    body: "Create a Walrus Memory agent. The public key under Delegate keys is the MEMWAL_AGENT_ID on the form.",
+    href: "https://memory.walrus.xyz/dashboard",
+    cta: "Open Memory dashboard",
+    accent: "green" as const,
+  },
+  {
+    id: "memory-docs",
+    label: "02",
+    title: "Read the Memory docs",
+    body: "How portable memory works, how to write on Mainnet, and how to keep at least 10 memories.",
+    href: "https://docs.wal.app/walrus-memory",
+    cta: "Open Walrus Memory docs",
+    accent: "primary" as const,
+  },
+];
+
 export const missionCards = [
   {
     id: "memory",
@@ -69,7 +134,7 @@ export const missionCards = [
     id: "builder",
     label: "Fast start",
     title: "Tatum AI Builder",
-    body: "Ship from a prompt at ai.tatum.io. Generate the app, wire Walrus Memory, and use Tatum RPCs for onchain data, then iterate in the dashboard.",
+    body: "Optional path with its own $500 award. Generate a first version, then wire Walrus Memory and Tatum RPCs. See How to start with Tatum.",
     accent: "primary",
   },
   {
@@ -180,31 +245,38 @@ export const bonusPrizes = [
     accent: "primary" as const,
     brand: "tatum" as const,
   },
+  {
+    title: "Mystery bounty",
+    amount: "$500",
+    detail: "A $500 surprise brief, introduced closer to the event. Watch Discord for the reveal.",
+    accent: "navy" as const,
+    brand: null,
+  },
 ];
 
 export const timeline = [
   {
-    date: "13 Oct",
+    date: "20 Oct",
     title: "Launch + build starts",
     detail: "Registration opens. Discord office hours go live.",
   },
   {
-    date: "13 Oct to 3 Nov",
+    date: "20 Oct to 10 Nov",
     title: "Build window",
     detail: "Three weeks to ship with Mainnet memory writes.",
   },
   {
-    date: "3 Nov",
+    date: "10 Nov",
     title: "Submissions close",
     detail: "Repo, demo, and blog post due 17:00 UTC.",
   },
   {
-    date: "4 to 12 Nov",
+    date: "11 to 16 Nov",
     title: "Judging",
     detail: "Same criteria across AI Builder and indie builds.",
   },
   {
-    date: "13 Nov",
+    date: "17 Nov",
     title: "Winners announced",
     detail: "Results shared publicly with partners and community.",
   },

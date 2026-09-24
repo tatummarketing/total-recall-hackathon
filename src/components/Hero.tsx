@@ -45,21 +45,8 @@ export function Hero() {
             <a href="#tracks" className="btn-ghost">
               Pick a track
             </a>
-            <a
-              href={hackathon.docs.aiBuilder}
-              target="_blank"
-              rel="noreferrer"
-              className="btn-accent"
-            >
-              AI Builder
-            </a>
-            <a
-              href={hackathon.docs.tatumRpc}
-              target="_blank"
-              rel="noreferrer"
-              className="btn-ghost"
-            >
-              Docs
+            <a href="#start-tatum" className="btn-ghost">
+              How to start
             </a>
           </div>
         </div>
