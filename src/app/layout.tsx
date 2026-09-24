@@ -24,14 +24,23 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Total Recall | Tatum x Walrus Memory Hackathon",
     description:
-      "Build apps that learn over time. 13 Oct to 3 Nov 2026. $4,000 prize pool. Walrus Memory + Tatum.",
+      "Join the Walrus x Tatum Hackathon: Total Recall. $4,000 prize pool. 13 Oct to 3 Nov 2026. Online.",
     type: "website",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Total Recall · Tatum x Walrus Memory Hackathon · $4,000 prize pool",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Total Recall | Tatum x Walrus Memory Hackathon",
     description:
-      "Build apps that learn over time. 13 Oct to 3 Nov 2026. $4,000 prize pool.",
+      "Join the Walrus x Tatum Hackathon: Total Recall. $4,000 prize pool. 13 Oct to 3 Nov 2026. Online.",
+    images: ["/opengraph-image.png"],
   },
 };
 
