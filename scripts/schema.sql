@@ -15,6 +15,7 @@ CREATE TABLE IF NOT EXISTS submissions (
   repo_url TEXT,
   additional_docs TEXT,
   walrus_experience TEXT,
+  tatum_ai_builder_experience TEXT,
   walrus_friction TEXT,
   social_posts TEXT,
   -- legacy / optional extras

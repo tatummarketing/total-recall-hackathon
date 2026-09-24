@@ -454,6 +454,21 @@ function SubmitModalForm({ onClose }: { onClose: () => void }) {
               </label>
               <label className="form-field form-field-span">
                 <span className="form-label">
+                  How was your experience building with the Tatum AI Builder?{" "}
+                  <span className="form-opt">Optional</span>
+                </span>
+                <p className="form-help mb-1">
+                  Prompting, generated app quality, dashboard, or skip if you did not use AI Builder.
+                </p>
+                <textarea
+                  name="tatumAiBuilderExperience"
+                  className="form-input form-textarea"
+                  rows={3}
+                  defaultValue={values?.tatumAiBuilderExperience}
+                />
+              </label>
+              <label className="form-field form-field-span">
+                <span className="form-label">
                   One bug or friction point with Walrus Memory{" "}
                   <span className="form-opt">Optional</span>
                 </span>

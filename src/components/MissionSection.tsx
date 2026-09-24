@@ -44,7 +44,7 @@ export function MissionSection() {
           <h2 className="heading-lg text-white">Welcome to the colony.</h2>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {missionCards.map((card) => (
             <article
               key={card.id}

@@ -16,6 +16,7 @@ export type SubmissionValues = {
   repoUrl: string;
   additionalDocs: string;
   walrusExperience: string;
+  tatumAiBuilderExperience: string;
   walrusFriction: string;
   socialPosts: string;
   howHeard: string;
@@ -53,6 +54,7 @@ function readValues(formData: FormData): SubmissionValues {
     repoUrl: str(formData, "repoUrl"),
     additionalDocs: str(formData, "additionalDocs"),
     walrusExperience: str(formData, "walrusExperience"),
+    tatumAiBuilderExperience: str(formData, "tatumAiBuilderExperience"),
     walrusFriction: str(formData, "walrusFriction"),
     socialPosts: str(formData, "socialPosts"),
     howHeard: str(formData, "howHeard"),
@@ -144,7 +146,7 @@ export async function submitHackathonForm(
         email, discord_id, linkedin_url, telegram_id,
         tatum_account_id, sui_address, account_id, memwal_agent_id,
         description, demo_video_url, repo_url, additional_docs,
-        walrus_experience, walrus_friction, social_posts,
+        walrus_experience, tatum_ai_builder_experience, walrus_friction, social_posts,
         how_heard, first_web3_project, accepted_terms,
         display_name, project_title
       ) VALUES (
@@ -161,6 +163,7 @@ export async function submitHackathonForm(
         ${values.repoUrl},
         ${values.additionalDocs || null},
         ${values.walrusExperience},
+        ${values.tatumAiBuilderExperience || null},
         ${values.walrusFriction || null},
         ${values.socialPosts || null},
         ${values.howHeard},

@@ -46,6 +46,14 @@ export function Hero() {
               Pick a track
             </a>
             <a
+              href={hackathon.docs.aiBuilder}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-accent"
+            >
+              AI Builder
+            </a>
+            <a
               href={hackathon.docs.tatumRpc}
               target="_blank"
               rel="noreferrer"
@@ -65,9 +73,9 @@ export function Hero() {
                 {[
                   "3 tracks · $1k each",
                   "Walrus Memory on Mainnet",
-                  "ai.tatum.io",
+                  "Tatum AI Builder · ai.tatum.io",
+                  "Tatum RPC & Data APIs",
                   "Web2 builders welcome",
-                  "Online globally",
                   "Apps that learn over time",
                 ].map((item) => (
                   <span key={`${copy}-${item}`} className="flex items-center gap-12">

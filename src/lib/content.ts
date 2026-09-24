@@ -2,9 +2,9 @@ export const hackathon = {
   name: "Total Recall",
   subtitle: "Memory Hackathon",
   partners: ["Tatum", "Walrus"] as const,
-  tagline: "Get your memory back. Build apps that learn on Mars time.",
+  tagline: "Get your memory back.",
   summary:
-    "Three weeks. Three tracks. Ship something that remembers you. Walrus Memory stores the learning. Tatum powers the data. No crypto degree required.",
+    "Three weeks. Three tracks. Ship something that remembers you. Walrus Memory stores the learning. Tatum AI Builder and RPCs power the build. No crypto degree required.",
   dates: {
     label: "13 Oct to 3 Nov 2026",
     kickoff: "13 Oct",
@@ -66,18 +66,25 @@ export const missionCards = [
     accent: "green",
   },
   {
+    id: "builder",
+    label: "Fast start",
+    title: "Tatum AI Builder",
+    body: "Ship from a prompt at ai.tatum.io. Generate the app, wire Walrus Memory, and use Tatum RPCs for onchain data — then iterate in the dashboard.",
+    accent: "primary",
+  },
+  {
     id: "web2",
     label: "Who it's for",
     title: "Web2 welcome",
     body: "Product people, AI builders, sports fans, fintech tinkerers. If you can ship a demo, you belong here.",
-    accent: "primary",
+    accent: "navy",
   },
   {
     id: "stack",
     label: "Under the hood",
     title: "Real stack",
-    body: "Memory on Mainnet. Tatum RPC when you need onchain data. AI Builder if you want a one prompt head start.",
-    accent: "navy",
+    body: "Memory on Mainnet. Tatum Sui RPC and Data APIs when you need onchain reads. Indie builds and AI Builder paths compete on the same tracks.",
+    accent: "green",
   },
 ];
 
@@ -134,15 +141,15 @@ export const tracks: Track[] = [
   {
     id: "consumer",
     number: "03",
-    title: "Consumer Apps People Use",
+    title: "Consumer Finance Apps",
     blurb:
-      "Money, planning, and social products that feel normal. Shared budgets, group trips, recommendation engines. Blockchain stays invisible. Memory makes the UX sticky.",
+      "Money products people actually open. Shared budgets, spend tracking, savings goals, and payment flows that feel normal. Blockchain stays invisible. Walrus Memory makes balances, habits, and preferences stick across sessions.",
     bestFit:
-      "Product designers optimizing for the first five minutes.",
+      "Fintech and product builders shipping everyday money tools — budgets, splits, and spend that learn with the user.",
     ideas: [
       "Group spending that remembers who owes what",
       "Subscription managers with learned spend limits",
-      "Feeds that improve from explicit feedback",
+      "Savings goals that adapt to real cash-flow patterns",
     ],
     accent: "navy",
     walrusIndex: 4,
@@ -155,6 +162,7 @@ export const requirements = [
   "At least 10 memories stored on Mainnet",
   "Published blog post: what it does, how it uses Tatum + Walrus, how it learned over time",
   "Working demo and public repo",
+  "Optional: build with Tatum AI Builder (ai.tatum.io) for the dedicated $500 bonus",
 ];
 
 export const bonusPrizes = [
