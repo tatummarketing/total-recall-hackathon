@@ -26,7 +26,7 @@ function StartCards({ items }: { items: StartLink[] }) {
           <h3 className="mb-3 text-xl font-semibold text-white">{item.title}</h3>
           <p className="mb-5 text-sm leading-relaxed text-white/65">{item.body}</p>
           <span className="mt-auto text-sm font-semibold text-[var(--tatum-green)] group-hover:underline">
-            {item.cta} →
+            {item.cta}
           </span>
         </a>
       ))}

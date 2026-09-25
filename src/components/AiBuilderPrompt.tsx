@@ -26,7 +26,7 @@ export function AiBuilderPrompt({ className = "" }: { className?: string }) {
       }}
     >
       <div className="prompt-composer-head">
-        <span className="prompt-composer-badge">Optional · $500 award</span>
+        <span className="prompt-composer-badge">$500 Bonus</span>
         <span className="text-white/50">
           Describe a Total Recall app. We open it in AI Builder.
         </span>
