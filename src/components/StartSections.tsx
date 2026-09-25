@@ -57,7 +57,7 @@ export function TatumStartSection() {
 
         <div className="card-recall border-[rgba(79,55,253,0.4)] from-[rgba(79,55,253,0.12)] bg-gradient-to-br p-6 md:p-8">
           <p className="mb-2 font-mono text-xs tracking-widest text-white/40 uppercase">
-            03 · Optional
+            03 · $500 Bonus
           </p>
           <h3 className="mb-2 text-xl font-semibold text-white">Prompt Tatum AI Builder</h3>
           <p className="mb-5 max-w-2xl text-sm leading-relaxed text-white/65">
