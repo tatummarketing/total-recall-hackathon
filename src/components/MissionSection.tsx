@@ -14,7 +14,7 @@ export function MissionSection() {
   return (
     <section
       id="mission"
-      className="section-pad relative z-[1] overflow-x-clip pt-4 pb-10 md:pt-6 md:pb-12"
+      className="section-pad relative z-[1] overflow-x-clip pt-8 pb-10 md:pt-10 md:pb-12"
     >
       <SectionBackdrop variant="mission" />
 
@@ -39,7 +39,7 @@ export function MissionSection() {
       </div>
 
       <div className="container-page relative z-10">
-        <div className="relative mb-8 max-w-2xl pt-2 md:mb-10 md:pt-4">
+        <div className="relative mb-8 max-w-2xl md:mb-10">
           <p className="eyebrow mb-3">Mission briefing</p>
           <h2 className="heading-lg text-white">Welcome to the colony.</h2>
         </div>

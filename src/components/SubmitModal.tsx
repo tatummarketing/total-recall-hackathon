@@ -31,6 +31,8 @@ type SubmitModalContextValue = {
   open: boolean;
   openModal: () => void;
   closeModal: () => void;
+  confirmed: boolean;
+  dismissConfirmed: () => void;
 };
 
 const SubmitModalContext = createContext<SubmitModalContextValue | null>(null);
@@ -81,11 +83,21 @@ function Section({
   );
 }
 
-function SubmitModalForm({ onClose }: { onClose: () => void }) {
+function SubmitModalForm({
+  onClose,
+  onSuccess,
+}: {
+  onClose: () => void;
+  onSuccess: () => void;
+}) {
   const titleId = useId();
   const [state, action, pending] = useActionState(submitHackathonForm, initialState);
   const values = state.values;
   const formKey = state.attempt ?? 0;
+
+  useEffect(() => {
+    if (state.ok) onSuccess();
+  }, [state.ok, onSuccess]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -125,15 +137,21 @@ function SubmitModalForm({ onClose }: { onClose: () => void }) {
           aria-labelledby={titleId}
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="submit-modal-success">
-            <p className="eyebrow mb-3">You&apos;re in</p>
+          <div className="submit-modal-success" role="status" aria-live="polite">
+            <span className="submit-success-icon" aria-hidden>
+              ✓
+            </span>
+            <p className="eyebrow mb-3">Submitted</p>
             <h2 id={titleId} className="heading-lg mb-3 text-white">
-              Submission received.
+              Your project was submitted successfully.
             </h2>
-            <p className="mb-6 text-white/70">{state.message}</p>
-            <div className="flex flex-wrap gap-3">
+            <p className="mb-6 text-white/70">
+              {state.message ||
+                "We have your entry. We will follow up on Discord if needed."}
+            </p>
+            <div className="flex flex-wrap justify-center gap-3">
               <button type="button" className="btn-primary" onClick={onClose}>
-                Close
+                Done
               </button>
               <a
                 href={hackathon.discordUrl}
@@ -542,13 +560,31 @@ function SubmitModalForm({ onClose }: { onClose: () => void }) {
 
 export function SubmitModalProvider({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
+  const [confirmed, setConfirmed] = useState(false);
   const openModal = useCallback(() => setOpen(true), []);
   const closeModal = useCallback(() => setOpen(false), []);
+  const onSuccess = useCallback(() => setConfirmed(true), []);
+  const dismissConfirmed = useCallback(() => setConfirmed(false), []);
 
   return (
-    <SubmitModalContext.Provider value={{ open, openModal, closeModal }}>
+    <SubmitModalContext.Provider
+      value={{ open, openModal, closeModal, confirmed, dismissConfirmed }}
+    >
       {children}
-      {open ? <SubmitModalForm onClose={closeModal} /> : null}
+      {open ? <SubmitModalForm onClose={closeModal} onSuccess={onSuccess} /> : null}
+      {confirmed && !open ? (
+        <div className="submit-confirm-banner" role="status" aria-live="polite">
+          <span className="submit-success-icon submit-success-icon-sm" aria-hidden>
+            ✓
+          </span>
+          <p>
+            <strong>Project submitted successfully.</strong> We have your entry.
+          </p>
+          <button type="button" className="submit-confirm-dismiss" onClick={dismissConfirmed}>
+            Dismiss
+          </button>
+        </div>
+      ) : null}
     </SubmitModalContext.Provider>
   );
 }

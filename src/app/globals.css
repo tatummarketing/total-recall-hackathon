@@ -1395,3 +1395,66 @@ body {
     padding: 3rem 2.5rem;
   }
 }
+
+.submit-success-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  margin-bottom: 1rem;
+  border-radius: 999px;
+  background: rgba(44, 205, 154, 0.14);
+  border: 1px solid rgba(44, 205, 154, 0.45);
+  color: var(--tatum-green);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.submit-success-icon-sm {
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+
+.submit-confirm-banner {
+  position: fixed;
+  left: 50%;
+  bottom: 1.25rem;
+  z-index: 70;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: min(36rem, calc(100% - 2rem));
+  transform: translateX(-50%);
+  padding: 0.85rem 1rem;
+  border-radius: var(--tatum-radius-xl);
+  border: 1px solid rgba(44, 205, 154, 0.45);
+  background: rgba(11, 12, 32, 0.94);
+  box-shadow: 0 16px 40px -16px rgba(0, 0, 0, 0.6);
+  color: white;
+  animation: fadeUp 0.3s ease both;
+}
+
+.submit-confirm-banner strong {
+  color: var(--tatum-green);
+  font-weight: 600;
+}
+
+.submit-confirm-dismiss {
+  margin-left: auto;
+  flex-shrink: 0;
+  padding: 0.35rem 0.7rem;
+  border-radius: var(--tatum-radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: transparent;
+  color: white;
+  font-size: 0.8125rem;
+  cursor: pointer;
+}
+
+.submit-confirm-dismiss:hover {
+  border-color: rgba(44, 205, 154, 0.45);
+  background: rgba(44, 205, 154, 0.1);
+}

@@ -9,11 +9,11 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-0 flex-col justify-start overflow-x-clip pb-6 pt-20 md:pb-8 md:pt-24"
+      className="relative flex min-h-0 flex-col justify-start overflow-x-clip pb-0 pt-20 md:pt-24"
     >
       <RecallBackdrop />
 
-      <div className="section-pad relative z-10 mx-auto w-full max-w-[1200px]">
+      <div className="section-pad relative z-10 mx-auto w-full max-w-[1200px] pb-6 md:pb-8">
         <div className="fade-up mb-5 flex flex-wrap items-center gap-3 text-sm">
           <span className="rounded-full border border-[rgba(79,55,253,0.4)] bg-[rgba(79,55,253,0.12)] px-3 py-1 text-[var(--tatum-primary-400)]">
             {hackathon.dates.label}
@@ -52,7 +52,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="relative z-10 mt-8 border-y border-[rgba(79,55,253,0.2)] bg-[rgba(11,12,32,0.75)] py-3.5 backdrop-blur-sm">
+      <div className="relative z-20 mt-8 -mb-px border-y border-[rgba(79,55,253,0.2)] bg-[rgba(11,12,32,0.92)] py-3.5">
         <div className="marquee">
           <div className="marquee-track">
             {[0, 1].map((copy) => (
