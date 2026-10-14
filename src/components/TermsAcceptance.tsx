@@ -52,7 +52,7 @@ export function TermsAcceptance({
           >
             Tatum Terms of Use
           </a>
-          , and the{" "}
+          , the{" "}
           <a
             href={legalLinks.walrusTerms}
             target="_blank"
@@ -60,6 +60,15 @@ export function TermsAcceptance({
             className="text-[var(--tatum-green)]"
           >
             Walrus General Terms of Service
+          </a>
+          , and the{" "}
+          <a
+            href={legalLinks.walrusPrivacy}
+            target="_blank"
+            rel="noreferrer"
+            className="text-[var(--tatum-green)]"
+          >
+            Walrus Privacy Policy
           </a>
           . I understand prizes are not guaranteed, judging decisions are final, and I am
           responsible for any taxes if I win.

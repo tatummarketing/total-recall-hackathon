@@ -1318,12 +1318,89 @@ body {
   animation: cardEnter 0.35s ease both;
 }
 
-.submit-modal.event-rules-modal {
-  width: min(880px, 100%);
+.event-rules-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  overflow-y: auto;
+  background: var(--bg);
+  color: var(--fg);
 }
 
-.event-rules-body {
-  padding-bottom: 1.5rem;
+.event-rules-sheet {
+  width: min(42rem, calc(100% - 2.5rem));
+  margin: 0 auto;
+  padding: 3.25rem 0 5rem;
+  font-family: var(--font-poppins), "Poppins", system-ui, sans-serif;
+}
+
+.event-rules-close {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 2;
+}
+
+.event-rules-doc {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: rgba(245, 246, 255, 0.78);
+}
+
+.event-rules-doc h2,
+.event-rules-doc h3 {
+  font-family: inherit;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+
+.event-rules-doc h2 {
+  margin: 0 0 1.25rem;
+  font-size: 1.35rem;
+  line-height: 1.3;
+}
+
+.event-rules-doc h3 {
+  margin: 1.65rem 0 0.55rem;
+  font-size: inherit;
+  line-height: 1.5;
+}
+
+.event-rules-doc p {
+  margin: 0 0 0.85rem;
+}
+
+.event-rules-doc .rules-item {
+  display: grid;
+  grid-template-columns: 1.35rem 1fr;
+  column-gap: 0.4rem;
+  margin: 0 0 0.35rem;
+}
+
+.event-rules-doc .rules-item.rules-num {
+  grid-template-columns: 1.6rem 1fr;
+}
+
+.event-rules-doc .rules-item[data-depth="1"] {
+  margin-left: 1.35rem;
+}
+
+.event-rules-doc .rules-item[data-depth="2"] {
+  margin-left: 2.7rem;
+}
+
+.event-rules-doc .rules-mark {
+  color: rgba(245, 246, 255, 0.78);
+}
+
+.event-rules-doc a {
+  color: var(--tatum-green);
+  text-decoration: none;
+}
+
+.event-rules-doc a:hover {
+  text-decoration: underline;
 }
 
 .submit-modal.card-recall:hover {

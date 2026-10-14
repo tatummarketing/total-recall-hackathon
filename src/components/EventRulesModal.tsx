@@ -9,7 +9,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { eventRules, legalLinks } from "@/lib/content";
+import { eventRules, type RulesLine } from "@/lib/content";
 
 type EventRulesContextValue = {
   open: boolean;
@@ -25,6 +25,76 @@ export function useEventRules() {
     throw new Error("useEventRules must be used within EventRulesProvider");
   }
   return ctx;
+}
+
+const BULLETS = ["●", "○", "■"] as const;
+
+function RichText({ text }: { text: string }) {
+  const parts: ReactNode[] = [];
+  let last = 0;
+  for (const match of text.matchAll(/https?:\/\/[^\s),]+/g)) {
+    const index = match.index ?? 0;
+    if (index > last) parts.push(text.slice(last, index));
+    const href = match[0];
+    parts.push(
+      <a key={`${href}-${index}`} href={href} target="_blank" rel="noreferrer">
+        {href}
+      </a>,
+    );
+    last = index + href.length;
+  }
+  if (last < text.length) parts.push(text.slice(last));
+  return <>{parts}</>;
+}
+
+function RulesDocument({ lines, titleId }: { lines: RulesLine[]; titleId: string }) {
+  return (
+    <article className="event-rules-doc">
+      {lines.map((line, index) => {
+        if (line.kind === "title") {
+          return (
+            <h2 key={index} id={titleId}>
+              <RichText text={line.text} />
+            </h2>
+          );
+        }
+        if (line.kind === "heading") {
+          return (
+            <h3 key={index}>
+              <RichText text={line.text} />
+            </h3>
+          );
+        }
+        if (line.kind === "b") {
+          return (
+            <p key={index} className="rules-item" data-depth={line.depth}>
+              <span className="rules-mark" aria-hidden>
+                {BULLETS[line.depth]}
+              </span>
+              <span>
+                <RichText text={line.text} />
+              </span>
+            </p>
+          );
+        }
+        if (line.kind === "n") {
+          return (
+            <p key={index} className="rules-item rules-num">
+              <span className="rules-mark">{line.n}.</span>
+              <span>
+                <RichText text={line.text} />
+              </span>
+            </p>
+          );
+        }
+        return (
+          <p key={index}>
+            <RichText text={line.text} />
+          </p>
+        );
+      })}
+    </article>
+  );
 }
 
 function EventRulesModal({ onClose }: { onClose: () => void }) {
@@ -47,85 +117,23 @@ function EventRulesModal({ onClose }: { onClose: () => void }) {
   }, []);
 
   return (
-    <div className="submit-modal-backdrop" onClick={onClose} role="presentation">
+    <div className="event-rules-backdrop" onClick={onClose} role="presentation">
       <div
-        className="submit-modal card-recall event-rules-modal"
+        className="event-rules-sheet"
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
         onClick={(e) => e.stopPropagation()}
       >
-        <header className="submit-modal-header">
-          <div>
-            <p className="eyebrow mb-2">{eventRules.eyebrow}</p>
-            <h2 id={titleId} className="heading-lg text-white">
-              {eventRules.title}
-            </h2>
-          </div>
-          <button
-            type="button"
-            className="submit-modal-close"
-            onClick={onClose}
-            aria-label="Close event rules"
-          >
-            ×
-          </button>
-        </header>
-
-        <div className="submit-modal-body event-rules-body">
-          <p className="mb-6 text-sm leading-relaxed text-white/65">
-            {eventRules.intro}{" "}
-            Related Walrus hackathon sessions:{" "}
-            <a
-              href={legalLinks.walrusSessions}
-              target="_blank"
-              rel="noreferrer"
-              className="text-[var(--tatum-green)]"
-            >
-              thewalrussessions.wal.app
-            </a>
-            .
-          </p>
-
-          <div className="grid gap-4 md:grid-cols-2">
-            {eventRules.sections.map((section) => (
-              <article
-                key={section.title}
-                className="rounded-xl border border-white/10 bg-black/20 px-4 py-4"
-              >
-                <h3 className="mb-2 text-sm font-semibold text-white">{section.title}</h3>
-                <p className="text-sm leading-relaxed text-white/60">{section.body}</p>
-              </article>
-            ))}
-          </div>
-
-          <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm">
-            <a
-              href={legalLinks.tatumTerms}
-              target="_blank"
-              rel="noreferrer"
-              className="text-[var(--tatum-green)] no-underline hover:underline"
-            >
-              Tatum Terms of Use
-            </a>
-            <a
-              href={legalLinks.walrusTerms}
-              target="_blank"
-              rel="noreferrer"
-              className="text-[var(--tatum-green)] no-underline hover:underline"
-            >
-              Walrus General Terms
-            </a>
-            <a
-              href={legalLinks.walrusPrivacy}
-              target="_blank"
-              rel="noreferrer"
-              className="text-[var(--tatum-green)] no-underline hover:underline"
-            >
-              Walrus Privacy Policy
-            </a>
-          </div>
-        </div>
+        <button
+          type="button"
+          className="submit-modal-close event-rules-close"
+          onClick={onClose}
+          aria-label="Close event rules"
+        >
+          ×
+        </button>
+        <RulesDocument lines={eventRules} titleId={titleId} />
       </div>
     </div>
   );

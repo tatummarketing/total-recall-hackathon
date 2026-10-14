@@ -287,7 +287,7 @@ export const judgingCriteria = [
     title: "Walrus and Tatum Integration",
     weight: "30%",
     detail:
-      "Meaningful, creative use of Walrus Memory as well as building with Tatum RPCs or Data APIs.",
+      "Meaningful and creative use of Walrus Memory, as well as building with Tatum RPCs or Data APIs.",
   },
   {
     title: "Technical Quality",
@@ -302,12 +302,12 @@ export const judgingCriteria = [
   {
     title: "Presentation",
     weight: "20%",
-    detail: "Clear docs and a working demo.",
+    detail: "Clear documentation and a working demo.",
   },
 ];
 
 export const judgingBonus =
-  "Share on X/LinkedIn tagging @Tatum_io and @WalrusFoundation";
+  "Share your project on X or LinkedIn. Tagging @Tatum_io and @WalrusFoundation is optional and may earn extra points.";
 
 export const faqs = [
   {
@@ -344,35 +344,198 @@ export const legalLinks = {
   walrusSessions: "https://thewalrussessions.wal.app/index.html",
 };
 
-export const eventRules = {
-  eyebrow: "Event rules",
-  title: "Terms for Total Recall.",
-  intro:
-    "Total Recall (the “Hackathon”) is organized jointly by Tatum Technology LLC (“Tatum”) and the Walrus Foundation (“Walrus”, and together with Tatum, the “Sponsors”). By registering, submitting, or otherwise participating, you agree to these Event Rules, the Tatum Terms of Use, and the Walrus General Terms of Service.",
-  sections: [
-    {
-      title: "Eligibility",
-      body: "You must be at least 18 years old (or the age of majority where you live). You must not be a resident of a sanctioned or restricted jurisdiction. Employees, contractors, and immediate family of the Sponsors involved in running the Hackathon may be ineligible for prizes at the Sponsors’ sole discretion. Teams and solo builders are welcome.",
-    },
-    {
-      title: "Submissions",
-      body: "Your Submission must be your original work (or work you are authorized to submit), completed or materially advanced during the build window, and must meet the published requirements (including Walrus Memory and Tatum usage where stated). You keep ownership of your IP, and you grant the Sponsors a worldwide, royalty free license to review, demo, and publicly showcase your Submission for Hackathon and marketing purposes.",
-    },
-    {
-      title: "Judging",
-      body: "Submissions are scored against the published judging criteria by a panel appointed by the Sponsors. Panel decisions are final and binding. The Sponsors may disqualify Submissions that are incomplete, fraudulent, abusive, off brief, or that violate these Event Rules or applicable law.",
-    },
-    {
-      title: "Prizes",
-      body: "Any prize amounts listed on this site are estimates and may be paid in USD, stablecoins, or other forms the Sponsors choose. Prizes are awarded only if and when the Sponsors confirm winners. Prize Recipients must respond and provide any required payment or wallet details within 14 days of an official winner announcement (as determined by the Sponsors). If a winner is unreachable, ineligible, or fails to claim, the prize may be forfeited and an alternate selected. You accept all risk of loss from incorrect wallet addresses or incompatible wallets. Taxes and reporting obligations are solely the winner’s responsibility. Prizes have no cash alternative except as the Sponsors allow, and are not transferable without written consent.",
-    },
-    {
-      title: "No guarantee; changes",
-      body: "Participation does not guarantee a prize, placement, publicity, or future opportunity. The Sponsors may modify, suspend, or cancel the Hackathon, prize pool, timeline, or rules for any reason, including technical, legal, or operational issues, without liability. This Hackathon is a skill based event, not a lottery or game of chance.",
-    },
-    {
-      title: "Liability",
-      body: "To the maximum extent permitted by law, the Sponsors and their affiliates are not liable for any indirect, incidental, special, consequential, or punitive damages arising from the Hackathon or your Submission. Platforms and third party services (including Discord, GitHub, and blockchain networks) are used at your own risk.",
-    },
-  ],
-};
+/** PDF line kinds: title, section heading, paragraph, bullet depth, numbered item. */
+export type RulesLine =
+  | { kind: "title"; text: string }
+  | { kind: "heading"; text: string }
+  | { kind: "p"; text: string }
+  | { kind: "b"; depth: 0 | 1 | 2; text: string }
+  | { kind: "n"; n: number; text: string };
+
+export const eventRules: RulesLine[] = [
+  { kind: "title", text: "Walrus x Tatum: Total Recall Hackathon Rules" },
+  {
+    kind: "p",
+    text: "The Walrus x Tatum Total Recall Hackathon event (the “Hackathon”) is organized and sponsored by the Walrus Foundation and Tatum Technology LLC (collectively, the “Sponsors”). The overarching goal of the Hackathon is to foster developer engagement with the Walrus protocol (the “Network”) resulting in the deployment and launch of a Network-native feedback and form platform that helps projects, teams, and the Sponsor collect structured feedback directly from their communities (each, a “Submission”) and the secondary goal is to foster the growth of the Network’s global developer community while embodying the Walrus Foundation’s values of openness, fairness and competition through tangible action that involves participants from the entire ecosystem.",
+  },
+  {
+    kind: "p",
+    text: "By participating in the Hackathon, you agree to the Walrus General Terms of Service, available at https://docs.wal.app/docs/legal/walrus_general_tos, the Walrus Privacy Policy available at https://docs.wal.app/docs/legal/privacy, the Terms of Total Recall available at https://recall-tatum-walrus.vercel.app/, the Tatum Terms of Use available at https://tatum.io/terms-of-use and these Walrus x Tatum: Total Recall Hackathon Rules (the “Event Rules”).",
+  },
+  { kind: "heading", text: "Key Information and Dates" },
+  {
+    kind: "p",
+    text: "Hackathon Duration: October 20, 2026, to November 10, 2026 5:00 PM UTC (“Hackathon Duration”)",
+  },
+  { kind: "p", text: "Submission Deadline: November 10, 2026 5:00 PM UTC" },
+  { kind: "p", text: "Results Announcement: November 17, 2026" },
+  { kind: "heading", text: "Hackathon Eligibility" },
+  {
+    kind: "p",
+    text: "You must be at least 18 years of age or the age of majority in the jurisdiction where you reside. You must not be a resident of a sanctioned or restricted jurisdiction. Employees and contractors of the Sponsors involved in running the Hackathon may be ineligible for prizes at the Sponsors’ sole discretion. You must not make more than one submission per person.",
+  },
+  {
+    kind: "p",
+    text: "You must complete the submission form at https://recall-tatum-walrus.vercel.app to participate in the Hackathon. Your Application must contain:",
+  },
+  { kind: "b", depth: 0, text: "Email" },
+  { kind: "b", depth: 0, text: "Discord handle" },
+  { kind: "b", depth: 0, text: "LinkedIn" },
+  { kind: "b", depth: 0, text: "How did you hear about this event?" },
+  { kind: "b", depth: 0, text: "Is this your first Web3 project?" },
+  { kind: "b", depth: 0, text: "Tatum ID" },
+  { kind: "b", depth: 0, text: "SUI address" },
+  { kind: "b", depth: 0, text: "Account ID (SUI)" },
+  { kind: "b", depth: 0, text: "MEMWAL_AGENT_ID" },
+  { kind: "b", depth: 0, text: "Project description" },
+  { kind: "b", depth: 0, text: "Short demo video (2 to 3 min)" },
+  { kind: "b", depth: 0, text: "GitHub repo" },
+  { kind: "b", depth: 0, text: "How was your experience building with Walrus?" },
+  { kind: "b", depth: 0, text: "How was your experience building with the Tatum AI Builder?" },
+  { kind: "heading", text: "Submissions" },
+  {
+    kind: "p",
+    text: "Your Submission must be your original work (or work you are authorized to submit), completed or materially advanced during the Hackathon Duration and must meet the published requirements (including Walrus Memory and Tatum usage where stated). You keep ownership of your IP, and you grant the Sponsors a worldwide, royalty free license to review, demo, and publicly showcase your Submission for Hackathon and marketing purposes.",
+  },
+  { kind: "heading", text: "Submission Requirements" },
+  { kind: "n", n: 1, text: "Walrus Memory integrated and writing on Mainnet." },
+  { kind: "n", n: 2, text: "Tatum RPC used for onchain data where relevant." },
+  { kind: "n", n: 3, text: "At least 10 memories stored on Mainnet." },
+  {
+    kind: "n",
+    n: 4,
+    text: "Published blog post: what it does, how it uses Tatum + Walrus, how it learned over time.",
+  },
+  { kind: "n", n: 5, text: "Working demo and public repo." },
+  {
+    kind: "n",
+    n: 6,
+    text: "Optional build with Tatum AI Builder (ai.tatum.io) for the dedicated $500 bonus described below under Prizes.",
+  },
+  { kind: "heading", text: "Submission Tracks" },
+  {
+    kind: "p",
+    text: "The Hackathon will reward prizes for three (3) tracks listed below:",
+  },
+  { kind: "b", depth: 0, text: "Markets & Sports Prediction" },
+  {
+    kind: "b",
+    depth: 1,
+    text: "Task: Build a prediction app for sports, elections, culture, or markets. Compare bookmaker odds with onchain sources. Track which voices were right. Users log picks before events. Memory stores credibility scores so the app learns who to trust.",
+  },
+  {
+    kind: "b",
+    depth: 1,
+    text: "Best Fit For: Fantasy leagues, sports fans, forecasters, and teams building consumer apps first.",
+  },
+  { kind: "b", depth: 2, text: "Sports companion that learns your leagues and trusted analysts" },
+  { kind: "b", depth: 2, text: "Odds dashboards that flag when sources disagree" },
+  { kind: "b", depth: 2, text: "Pick journals with post game scorecards" },
+  { kind: "b", depth: 0, text: "Smart Agents for Real Life" },
+  {
+    kind: "b",
+    depth: 1,
+    text: "Task: Agents that monitor inboxes, expenses, habits, or workflows. Portable memory means they pick up where they left off across tools and sessions.",
+  },
+  {
+    kind: "b",
+    depth: 1,
+    text: "Best Fit For: AI builders and anyone who wished their assistant remembered last Tuesday.",
+  },
+  { kind: "b", depth: 2, text: "Research agent with source trust scores" },
+  { kind: "b", depth: 2, text: "Expense watchdog with long term memory" },
+  { kind: "b", depth: 2, text: "Workflow bots that learn your escalation rules" },
+  { kind: "b", depth: 0, text: "Consumer Finance Apps" },
+  {
+    kind: "b",
+    depth: 1,
+    text: "Task: Money products people actually open. Shared budgets, spend tracking, savings goals, and payment flows that feel normal. Blockchain stays invisible. Walrus Memory makes balances, habits, and preferences stick across sessions.",
+  },
+  {
+    kind: "b",
+    depth: 1,
+    text: "Best Fit For: Money products people actually open. Shared budgets, spend tracking, savings goals, and payment flows that feel normal. Blockchain stays invisible. Walrus Memory makes balances, habits, and preferences stick across sessions.",
+  },
+  { kind: "b", depth: 2, text: "Group spending that remembers who owes what" },
+  { kind: "b", depth: 2, text: "Subscription managers with learned spend limits" },
+  { kind: "b", depth: 2, text: "Savings goals that adapt real cash flow patterns" },
+  { kind: "heading", text: "Judgment of Submissions; Selection of the Winners" },
+  {
+    kind: "p",
+    text: "Submissions are scored against the published judging criteria by a panel appointed by the Sponsors (the “Panel”). Panel decisions are final and binding.",
+  },
+  { kind: "p", text: "Submissions will be judged on the following criteria:" },
+  {
+    kind: "n",
+    n: 1,
+    text: "Walrus and Tatum integration (30%). Meaningful and creative use of Walrus Memory, as well as building with Tatum RPCs or Data APIs.",
+  },
+  {
+    kind: "n",
+    n: 2,
+    text: "Technical quality (30%). Clean code and successful Tatum Sui RPC integration.",
+  },
+  { kind: "n", n: 3, text: "Creativity (20%). Original ideas and distinctive product direction." },
+  { kind: "n", n: 4, text: "Presentation (20%). Clear documentation and a working demo." },
+  {
+    kind: "p",
+    text: "Bonus: There is a bonus for sharing your project on X or LinkedIn. Tagging @Tatum_io and @WalrusFoundation is optional and may earn extra points.",
+  },
+  {
+    kind: "p",
+    text: "The Sponsors may disqualify Submissions that are incomplete, fraudulent, abusive, do not comply with these rules, or that violate these Event Rules or applicable law.",
+  },
+  { kind: "heading", text: "Prizes" },
+  {
+    kind: "p",
+    text: "A prize (the “Prize”) will be awarded to Hackathon Team winners (each a “Prize Recipient”). Any prize amounts listed on this site are estimates and may be paid in USD, stablecoins, or other forms the Sponsors choose. For this Hackathon, the prizes will be denominated in a stablecoin of the Sponsors’ choosing such as U.S. Dollar Coin (USDC), issued by Circle. The Prize will be deposited into a Prize Recipient-owned wallet that is capable of accepting USDC (“Recipient Wallet”). In order to receive the prize, one member of the winning Team must confirm acceptance of the prize via email and provide to the Sponsors its unique Recipient Wallet address information within 14 days of an official announcement of results (as determined by the Sponsors).",
+  },
+  {
+    kind: "p",
+    text: "For the avoidance of doubt, the Sponsors shall determine if an announcement is an official announcement at their own discretion. Prizes are awarded only if and when the Sponsors confirm winners. Additionally, Prize Recipients must confirm via a de minimis test transaction that the Recipient Wallet is compatible with USDC.",
+  },
+  {
+    kind: "p",
+    text: "Each Prize Recipient accepts all risk of loss with respect to any transfer of USDC or other digital currency to an incompatible wallet or an incorrect wallet address provided by such Prize Recipient. Taxes and reporting obligations are solely the winner’s responsibility. Prizes have no cash alternative except as the Sponsors allow, and are not transferable without written consent.",
+  },
+  {
+    kind: "p",
+    text: "Prizes will be awarded to the Teams in each category whose Submission earns the highest total overall score(s) (if in a track that awards prizes to 1st, 2nd and 3rd place) as determined by the Panel. The prizes are as follows:",
+  },
+  {
+    kind: "p",
+    text: "Track Prizes - $1,000 per track, awarded in each of the three tracks:",
+  },
+  { kind: "b", depth: 0, text: "Markets & Sports Prediction" },
+  { kind: "b", depth: 1, text: "Prizes: 1st Place, $500; 2nd place, $300; 3rd Place, $200." },
+  { kind: "b", depth: 0, text: "Smart Agents for Real Life" },
+  { kind: "b", depth: 1, text: "Prizes: 1st Place, $500; 2nd place, $300; 3rd Place, $200." },
+  { kind: "b", depth: 0, text: "Consumer Finance Apps" },
+  { kind: "b", depth: 1, text: "Prizes: 1st Place, $500; 2nd place, $300; 3rd Place, $200." },
+  {
+    kind: "p",
+    text: "Best Walrus Memory Prize — $500: Selected by the Walrus team and awarded to the participant with the deepest learning loop. Memories that visibly change the product.",
+  },
+  {
+    kind: "p",
+    text: "Best Tatum AI Builder App Prize — $500: Awarded to the participant with the best shippable product built primarily with ai.tatum.io.",
+  },
+  {
+    kind: "p",
+    text: "Mystery Bounty — $500: This bounty will be introduced closer to the event, revealed on Discord.",
+  },
+  {
+    kind: "p",
+    text: "If a selected winning Team cannot be contacted via email, is ineligible, or fails to claim a prize within 14 days of the official announcement of results, the prize may be forfeited and an alternate winner may be selected from the remaining eligible Submissions as determined in the sole discretion of the Panel.",
+  },
+  { kind: "heading", text: "No guarantee; changes" },
+  {
+    kind: "p",
+    text: "Participation does not guarantee a prize, placement, publicity, or future opportunity. The Sponsors may modify, suspend, or cancel the Hackathon, prize pool, timeline, or rules for any reason, including technical, legal, or operational issues, without liability. This Hackathon is a skill based event, not a lottery or game of chance.",
+  },
+  { kind: "heading", text: "Liability" },
+  {
+    kind: "p",
+    text: "To the maximum extent permitted by law, the Sponsors and their affiliates are not liable for any indirect, incidental, special, consequential, or punitive damages arising from the Hackathon or your Submission. Platforms and third party services (including Discord, GitHub, and blockchain networks) are used at your own risk.",
+  },
+];

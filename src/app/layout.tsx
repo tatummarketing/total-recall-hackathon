@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   title: "Total Recall | Tatum x Walrus Memory Hackathon",
   description:
     "Get your memory back. Three tracks, $4,500 in prizes. Walrus Memory + Tatum. Web2 builders welcome.",
-  alternates: { canonical: "https://tatum.io/total-recall" },
+  alternates: { canonical: "https://tatum.io/hackathon/total-recall" },
   openGraph: {
-    url: "https://tatum.io/total-recall",
+    url: "https://tatum.io/hackathon/total-recall",
     title: "Total Recall | Tatum x Walrus Memory Hackathon",
     description:
       "Join the Walrus x Tatum Hackathon: Total Recall. $4,500 prize pool. 20 Oct to 10 Nov 2026. Online.",
@@ -51,7 +51,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className={`${poppins.variable} ${orbitron.variable} h-full antialiased`}>
       <body className="min-h-full font-sans text-foreground antialiased">
         {children}
-        {/* Embedded on tatum.io/total-recall: keep outbound links from loading inside the frame */}
+        {/* Embedded on tatum.io/hackathon/total-recall: keep outbound links from loading inside the frame */}
         <script
           dangerouslySetInnerHTML={{
             __html: `if(window.top!==window.self){document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[href]");if(!a)return;var u=new URL(a.href,location.href);if(u.origin!==location.origin){a.target="_blank";a.rel="noopener noreferrer";}},true);}`,
