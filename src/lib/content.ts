@@ -246,11 +246,11 @@ export const bonusPrizes = [
     brand: "tatum" as const,
   },
   {
-    title: "Mystery bounty",
+    title: "Best Use of Agent Payments",
     amount: "$500",
-    detail: "A $500 surprise brief, introduced closer to the event. Watch Discord for the reveal.",
+    detail: "Best app across tracks using x402 or MPP, settled on Sui.",
     accent: "navy" as const,
-    brand: null,
+    brand: "walrus" as const,
   },
 ];
 
@@ -522,7 +522,7 @@ export const eventRules: RulesLine[] = [
   },
   {
     kind: "p",
-    text: "Mystery Bounty — $500: This bounty will be introduced closer to the event, revealed on Discord.",
+    text: "Best Use of Agent Payments — $500: Awarded to the best app across the three tracks that integrates agent payments using x402 or MPP, with payments settled on Sui.",
   },
   {
     kind: "p",
